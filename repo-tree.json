@@ -1,0 +1,1190 @@
+{
+  "sha": "4de9f93060d7ed769688531070dceb648f90f1e8",
+  "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/4de9f93060d7ed769688531070dceb648f90f1e8",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ef35ef11727a19632efa4b14d2cd1b5cd9308a3",
+      "size": 375,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/4ef35ef11727a19632efa4b14d2cd1b5cd9308a3"
+    },
+    {
+      "path": ".lovable",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "90c80705da7dcbfbd3c90433b2f50a558622788e",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/90c80705da7dcbfbd3c90433b2f50a558622788e"
+    },
+    {
+      "path": ".lovable/project.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1ba9a922881208325dc12787fc741426b01cdb7",
+      "size": 71,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/f1ba9a922881208325dc12787fc741426b01cdb7"
+    },
+    {
+      "path": ".prettierignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be49b2655e2222e8a688f616a5c13500298801a0",
+      "size": 92,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/be49b2655e2222e8a688f616a5c13500298801a0"
+    },
+    {
+      "path": ".prettierrc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90abee2393e79dff7ec36856c94f662a263f0107",
+      "size": 90,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/90abee2393e79dff7ec36856c94f662a263f0107"
+    },
+    {
+      "path": "bun.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ded1abfc79d148702d10dad2f7498acfcc65e89",
+      "size": 236194,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/6ded1abfc79d148702d10dad2f7498acfcc65e89"
+    },
+    {
+      "path": "bunfig.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a85c15869852cfb983d95855ad5573dd5e29401b",
+      "size": 280,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/a85c15869852cfb983d95855ad5573dd5e29401b"
+    },
+    {
+      "path": "components.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0817a84e832a693e7a79a911efe0b081bd97e06",
+      "size": 443,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/f0817a84e832a693e7a79a911efe0b081bd97e06"
+    },
+    {
+      "path": "eslint.config.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be4075bd5e14ae3e6420613f789c3fc8bbeda819",
+      "size": 1250,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/be4075bd5e14ae3e6420613f789c3fc8bbeda819"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3fe9269fe2dcab5d49ff767d4fa2bd514574016c",
+      "size": 3263,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/3fe9269fe2dcab5d49ff767d4fa2bd514574016c"
+    },
+    {
+      "path": "public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f506d0eaada37c80dd005bd90b76d089b9db78fa",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/f506d0eaada37c80dd005bd90b76d089b9db78fa"
+    },
+    {
+      "path": "public/apple-touch-icon.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbe4767d7651bda839b598b6d9a3cb8189236ec3",
+      "size": 313666,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/bbe4767d7651bda839b598b6d9a3cb8189236ec3"
+    },
+    {
+      "path": "public/favicon.ico",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a96aac4c0cb940ad98fb764f306ecf83ab42556",
+      "size": 33538,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/3a96aac4c0cb940ad98fb764f306ecf83ab42556"
+    },
+    {
+      "path": "public/favicon.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbe4767d7651bda839b598b6d9a3cb8189236ec3",
+      "size": 313666,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/bbe4767d7651bda839b598b6d9a3cb8189236ec3"
+    },
+    {
+      "path": "public/robots.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2a49f4fb82f19ffa9089fcf8630e5a2870d3feb",
+      "size": 23,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/c2a49f4fb82f19ffa9089fcf8630e5a2870d3feb"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "05449ef3a705870502726ff470b835d41267c135",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/05449ef3a705870502726ff470b835d41267c135"
+    },
+    {
+      "path": "src/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b0b449d600fcd4ee9a4c38c2aefc769a830e48a4",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/b0b449d600fcd4ee9a4c38c2aefc769a830e48a4"
+    },
+    {
+      "path": "src/assets/clients",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "08fd65cf8e9794d36675dc297cd39aad03c0efe4",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/08fd65cf8e9794d36675dc297cd39aad03c0efe4"
+    },
+    {
+      "path": "src/assets/clients/IMG-20260606-WA0000.jpg.jpeg.asset.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c66f2c19a9d46d305dd0b700fb33dc36be9fe4f",
+      "size": 491,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/7c66f2c19a9d46d305dd0b700fb33dc36be9fe4f"
+    },
+    {
+      "path": "src/assets/clients/IMG-20260606-WA0002.jpg.jpeg.asset.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ced3ab708c278d8e145de312dd4a4be987215e88",
+      "size": 491,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/ced3ab708c278d8e145de312dd4a4be987215e88"
+    },
+    {
+      "path": "src/assets/clients/IMG_0047.PNG.asset.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "831d0ec6db3119355415cbf21bf3d9ace173e847",
+      "size": 443,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/831d0ec6db3119355415cbf21bf3d9ace173e847"
+    },
+    {
+      "path": "src/assets/clients/IMG_1078.JPG.jpeg.asset.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b1595285302aa1ebc8f13553439e1991bb8c404",
+      "size": 458,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/2b1595285302aa1ebc8f13553439e1991bb8c404"
+    },
+    {
+      "path": "src/assets/clients/IMG_7279.PNG.asset.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a23a7c74aaa3ee57a4ecc5f103a068b728ed1cf",
+      "size": 443,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/5a23a7c74aaa3ee57a4ecc5f103a068b728ed1cf"
+    },
+    {
+      "path": "src/assets/clients/IMG_7922.PNG.asset.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ca735f4fe622fac8a06440cfd94252fdbd76010",
+      "size": 443,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/7ca735f4fe622fac8a06440cfd94252fdbd76010"
+    },
+    {
+      "path": "src/assets/optivo-logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbe4767d7651bda839b598b6d9a3cb8189236ec3",
+      "size": 313666,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/bbe4767d7651bda839b598b6d9a3cb8189236ec3"
+    },
+    {
+      "path": "src/components",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e3ae99f787a5615fcec20dfa4594a87f2cb591f4",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/e3ae99f787a5615fcec20dfa4594a87f2cb591f4"
+    },
+    {
+      "path": "src/components/BookCall.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39ce97b3f64908f38541460f23ee3c4ca89e7198",
+      "size": 8189,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/39ce97b3f64908f38541460f23ee3c4ca89e7198"
+    },
+    {
+      "path": "src/components/CTASection.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11fc1b202858cf22985d1a5fa4a5ab70a0821c00",
+      "size": 2321,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/11fc1b202858cf22985d1a5fa4a5ab70a0821c00"
+    },
+    {
+      "path": "src/components/ClientLogos.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c01e263c105d3c221cd0bc0978eb8276b173632",
+      "size": 2693,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/4c01e263c105d3c221cd0bc0978eb8276b173632"
+    },
+    {
+      "path": "src/components/EngagementPopup.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d3b66ef283d9bb7f576107f2f8079464ad407fe",
+      "size": 5137,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/0d3b66ef283d9bb7f576107f2f8079464ad407fe"
+    },
+    {
+      "path": "src/components/FAQ.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc75645074bebbff8b1163f67c21927ca10648a0",
+      "size": 1642,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/fc75645074bebbff8b1163f67c21927ca10648a0"
+    },
+    {
+      "path": "src/components/Footer.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e0126c887c08a958c83f61e9a6ca580858c2fad",
+      "size": 6160,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/2e0126c887c08a958c83f61e9a6ca580858c2fad"
+    },
+    {
+      "path": "src/components/LegalLayout.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c94ac759a14eed8764345f59d442aaa8ba53520",
+      "size": 3278,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/6c94ac759a14eed8764345f59d442aaa8ba53520"
+    },
+    {
+      "path": "src/components/Navbar.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "189aad6912543914f189ef7ea1ccc1b0397f695a",
+      "size": 4352,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/189aad6912543914f189ef7ea1ccc1b0397f695a"
+    },
+    {
+      "path": "src/components/Section.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64c515aaf3db04c1f9e68672297e230cc44b397f",
+      "size": 1818,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/64c515aaf3db04c1f9e68672297e230cc44b397f"
+    },
+    {
+      "path": "src/components/StatCounter.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb867a887342608a366c65e07f60e9cdb80c4281",
+      "size": 934,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/fb867a887342608a366c65e07f60e9cdb80c4281"
+    },
+    {
+      "path": "src/components/WhatsAppFloat.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cab5f6cf6611b05076804610e93b5bea79b7f663",
+      "size": 469,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/cab5f6cf6611b05076804610e93b5bea79b7f663"
+    },
+    {
+      "path": "src/components/admin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "62ffc1aad622142b700bc655faba36ea335a1c5a",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/62ffc1aad622142b700bc655faba36ea335a1c5a"
+    },
+    {
+      "path": "src/components/admin/AdminShell.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca744cd1d7e0f54ad3b9ef1d1a29874a151ac7e9",
+      "size": 6427,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/ca744cd1d7e0f54ad3b9ef1d1a29874a151ac7e9"
+    },
+    {
+      "path": "src/components/admin/LeadsTable.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aed0a7a0cb76f8b2f6e8028be4b9645ddfaaa4b3",
+      "size": 7126,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/aed0a7a0cb76f8b2f6e8028be4b9645ddfaaa4b3"
+    },
+    {
+      "path": "src/components/ui",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f6937bb2bfe5ae27f4107c63ec08ea6756cf7479",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/f6937bb2bfe5ae27f4107c63ec08ea6756cf7479"
+    },
+    {
+      "path": "src/components/ui/accordion.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16ee9004561ab0de3cc53789d5265cba511c8570",
+      "size": 2015,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/16ee9004561ab0de3cc53789d5265cba511c8570"
+    },
+    {
+      "path": "src/components/ui/alert-dialog.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "072a66562e9d94e33ccaf32d27c8efe3a52e7c32",
+      "size": 4183,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/072a66562e9d94e33ccaf32d27c8efe3a52e7c32"
+    },
+    {
+      "path": "src/components/ui/alert.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd0a0627702e492c3f02607dbc77025999c5ed13",
+      "size": 1589,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/cd0a0627702e492c3f02607dbc77025999c5ed13"
+    },
+    {
+      "path": "src/components/ui/aspect-ratio.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9e6f4bf9e1c01d6d7022b53e68438e61746c86c",
+      "size": 143,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/c9e6f4bf9e1c01d6d7022b53e68438e61746c86c"
+    },
+    {
+      "path": "src/components/ui/avatar.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7904926b9d89e90f6e9a3a9dad2abeed5af99c2e",
+      "size": 1413,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/7904926b9d89e90f6e9a3a9dad2abeed5af99c2e"
+    },
+    {
+      "path": "src/components/ui/badge.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3aabd17e73034f71efdd2f301f8a81ab8cdae23c",
+      "size": 1123,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/3aabd17e73034f71efdd2f301f8a81ab8cdae23c"
+    },
+    {
+      "path": "src/components/ui/breadcrumb.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94eb6291a6f26846562a63438b3c49595e9bff25",
+      "size": 2749,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/94eb6291a6f26846562a63438b3c49595e9bff25"
+    },
+    {
+      "path": "src/components/ui/button.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc3bc9f6bbefc3155d1f4d053ff58f9b8662edbe",
+      "size": 1894,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/bc3bc9f6bbefc3155d1f4d053ff58f9b8662edbe"
+    },
+    {
+      "path": "src/components/ui/calendar.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "781f8853f2a4044c305cc862f832a2b01d41d3d7",
+      "size": 7210,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/781f8853f2a4044c305cc862f832a2b01d41d3d7"
+    },
+    {
+      "path": "src/components/ui/card.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d886b020243248cee648b14274a763b325a3bc55",
+      "size": 1817,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/d886b020243248cee648b14274a763b325a3bc55"
+    },
+    {
+      "path": "src/components/ui/carousel.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5dd7455702b2fb2c9561dd3b1ed700210ef3be3d",
+      "size": 6200,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/5dd7455702b2fb2c9561dd3b1ed700210ef3be3d"
+    },
+    {
+      "path": "src/components/ui/chart.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f27e7ca5343ccc102441afeb45ef946e1d504944",
+      "size": 10570,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/f27e7ca5343ccc102441afeb45ef946e1d504944"
+    },
+    {
+      "path": "src/components/ui/checkbox.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f01d47c865e9ce28610b16bfa4021a88beebec3e",
+      "size": 1043,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/f01d47c865e9ce28610b16bfa4021a88beebec3e"
+    },
+    {
+      "path": "src/components/ui/collapsible.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb003d17563549c97d3d349477c0aa073b2244aa",
+      "size": 335,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/cb003d17563549c97d3d349477c0aa073b2244aa"
+    },
+    {
+      "path": "src/components/ui/command.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc859d7281e5b4fef5a2b71ea30459e0745003a8",
+      "size": 4876,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/dc859d7281e5b4fef5a2b71ea30459e0745003a8"
+    },
+    {
+      "path": "src/components/ui/context-menu.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bad5ecec471b1fffa49c1f23a43f4d69ebb4edb3",
+      "size": 7391,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/bad5ecec471b1fffa49c1f23a43f4d69ebb4edb3"
+    },
+    {
+      "path": "src/components/ui/dialog.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ed559e3d6f2ab5f0d0287f56c63fbcd48a47b87",
+      "size": 3648,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/8ed559e3d6f2ab5f0d0287f56c63fbcd48a47b87"
+    },
+    {
+      "path": "src/components/ui/drawer.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33533cc7600c40d506a3d308d16ef25f95af3e9d",
+      "size": 2973,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/33533cc7600c40d506a3d308d16ef25f95af3e9d"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f11da936afd13d3036831b96e8d36f62bf2b81de",
+      "size": 7596,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/f11da936afd13d3036831b96e8d36f62bf2b81de"
+    },
+    {
+      "path": "src/components/ui/form.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d15828dac1306f42581c2aa2aa45d04c65522db",
+      "size": 4201,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/4d15828dac1306f42581c2aa2aa45d04c65522db"
+    },
+    {
+      "path": "src/components/ui/hover-card.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36f3b7976293638d6c1eef6c426847107dbf766f",
+      "size": 1246,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/36f3b7976293638d6c1eef6c426847107dbf766f"
+    },
+    {
+      "path": "src/components/ui/input-otp.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95d1f4c303a394a313c79f27184456bef5d99ae5",
+      "size": 2161,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/95d1f4c303a394a313c79f27184456bef5d99ae5"
+    },
+    {
+      "path": "src/components/ui/input.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7db524115c08e80b10d5282d1bb504b06b238d17",
+      "size": 776,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/7db524115c08e80b10d5282d1bb504b06b238d17"
+    },
+    {
+      "path": "src/components/ui/label.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "392197c3b43d69a9b426d49dec06d32ff53ea8d4",
+      "size": 716,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/392197c3b43d69a9b426d49dec06d32ff53ea8d4"
+    },
+    {
+      "path": "src/components/ui/menubar.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c9eb98d5eaca6f6da74f71e73893c739da6cb3e",
+      "size": 8546,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/5c9eb98d5eaca6f6da74f71e73893c739da6cb3e"
+    },
+    {
+      "path": "src/components/ui/navigation-menu.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94b2ecc95158b20a18bd986d1313558a128c480f",
+      "size": 5152,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/94b2ecc95158b20a18bd986d1313558a128c480f"
+    },
+    {
+      "path": "src/components/ui/pagination.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8cd41fbaad75c338aec493b5c750b65f95845c5",
+      "size": 2739,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/f8cd41fbaad75c338aec493b5c750b65f95845c5"
+    },
+    {
+      "path": "src/components/ui/popover.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc78a209bbda251914e8ee4633c303ba55a59d2c",
+      "size": 1352,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/dc78a209bbda251914e8ee4633c303ba55a59d2c"
+    },
+    {
+      "path": "src/components/ui/progress.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1741cd2f42b7b3c7edcabee07c06e8750556f5ed",
+      "size": 781,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/1741cd2f42b7b3c7edcabee07c06e8750556f5ed"
+    },
+    {
+      "path": "src/components/ui/radio-group.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38a1a6629d76c4a6f445eb85aa8c6d485b9c064a",
+      "size": 1405,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/38a1a6629d76c4a6f445eb85aa8c6d485b9c064a"
+    },
+    {
+      "path": "src/components/ui/resizable.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02e9460e72e5e0afa5f71264f0fcd4a16d021aea",
+      "size": 1552,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/02e9460e72e5e0afa5f71264f0fcd4a16d021aea"
+    },
+    {
+      "path": "src/components/ui/scroll-area.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69febe58466d6309bdfc74bdca456c7aac448f79",
+      "size": 1635,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/69febe58466d6309bdfc74bdca456c7aac448f79"
+    },
+    {
+      "path": "src/components/ui/select.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3fdfc929eb90d4f33e2591e94cdfb2278d1b5c38",
+      "size": 5749,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/3fdfc929eb90d4f33e2591e94cdfb2278d1b5c38"
+    },
+    {
+      "path": "src/components/ui/separator.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f5966c41731e846b2bc97de315471ea605ffe86",
+      "size": 723,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/5f5966c41731e846b2bc97de315471ea605ffe86"
+    },
+    {
+      "path": "src/components/ui/sheet.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0aedeb766169d085f3b4bb72e80eac6fe552b971",
+      "size": 4248,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/0aedeb766169d085f3b4bb72e80eac6fe552b971"
+    },
+    {
+      "path": "src/components/ui/sidebar.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3922680246adfbcdc91110f779eea0b291222a54",
+      "size": 23975,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/3922680246adfbcdc91110f779eea0b291222a54"
+    },
+    {
+      "path": "src/components/ui/skeleton.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d9a616758e39fcbc07480484a308ffb9d9fba5d",
+      "size": 239,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/6d9a616758e39fcbc07480484a308ffb9d9fba5d"
+    },
+    {
+      "path": "src/components/ui/slider.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e56622ad7eec5f4e98dc870f745c2e066c66f10e",
+      "size": 1025,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/e56622ad7eec5f4e98dc870f745c2e066c66f10e"
+    },
+    {
+      "path": "src/components/ui/sonner.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a214692adeeea9cfe4acd8659b1b7e0fd4f756f",
+      "size": 734,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/7a214692adeeea9cfe4acd8659b1b7e0fd4f756f"
+    },
+    {
+      "path": "src/components/ui/switch.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6338184e11d92961b4dfd06f151ce5ada7dd838c",
+      "size": 1156,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/6338184e11d92961b4dfd06f151ce5ada7dd838c"
+    },
+    {
+      "path": "src/components/ui/table.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49d2d5c7c3e9d2d43fb2a2e423c751ec77da4279",
+      "size": 2820,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/49d2d5c7c3e9d2d43fb2a2e423c751ec77da4279"
+    },
+    {
+      "path": "src/components/ui/tabs.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6047b50eb6db8395f79c666e488d71881155d97e",
+      "size": 1934,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/6047b50eb6db8395f79c666e488d71881155d97e"
+    },
+    {
+      "path": "src/components/ui/textarea.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29330b61811cf9aaac31a94f981728f898229bd5",
+      "size": 677,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/29330b61811cf9aaac31a94f981728f898229bd5"
+    },
+    {
+      "path": "src/components/ui/toggle-group.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2c9f8ee385d50f14ca51f63db9cad9b92accd47",
+      "size": 1752,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/d2c9f8ee385d50f14ca51f63db9cad9b92accd47"
+    },
+    {
+      "path": "src/components/ui/toggle.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d146b6a1051516735339895093cbcbcfeb9a3e8",
+      "size": 1534,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/9d146b6a1051516735339895093cbcbcfeb9a3e8"
+    },
+    {
+      "path": "src/components/ui/tooltip.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07e55fafdcf32ee9a57164a07c89422e61c6ac2e",
+      "size": 1278,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/07e55fafdcf32ee9a57164a07c89422e61c6ac2e"
+    },
+    {
+      "path": "src/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ce699e105ceb19a391bbfe8c5c942aa9f2d204fd",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/ce699e105ceb19a391bbfe8c5c942aa9f2d204fd"
+    },
+    {
+      "path": "src/data/faqs.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9bc54598494ae372d9e89a6d4d18ae1c346cdc41",
+      "size": 3902,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/9bc54598494ae372d9e89a6d4d18ae1c346cdc41"
+    },
+    {
+      "path": "src/data/reviews.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ab828aceb839a34cd90dfb1ef43414c42b9241e",
+      "size": 1744,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/4ab828aceb839a34cd90dfb1ef43414c42b9241e"
+    },
+    {
+      "path": "src/data/services.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53b5133356929ad699d90dd022ad266b59a5d5fe",
+      "size": 40959,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/53b5133356929ad699d90dd022ad266b59a5d5fe"
+    },
+    {
+      "path": "src/data/site.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f53f8448dd572277af70a1330d2a4a7c0b7419d",
+      "size": 1096,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/3f53f8448dd572277af70a1330d2a4a7c0b7419d"
+    },
+    {
+      "path": "src/hooks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "99cef8458a0f479da13b65ee7c8b4d2cdba31024",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/99cef8458a0f479da13b65ee7c8b4d2cdba31024"
+    },
+    {
+      "path": "src/hooks/use-mobile.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "502fd323934501eab408a396a9ae4a07c0ae3560",
+      "size": 576,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/502fd323934501eab408a396a9ae4a07c0ae3560"
+    },
+    {
+      "path": "src/hooks/useLeads.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f16cbacccee79ccbae8cca3ce30f4b821ddd5af",
+      "size": 3177,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/3f16cbacccee79ccbae8cca3ce30f4b821ddd5af"
+    },
+    {
+      "path": "src/integrations",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c54e64bf6a644419bd0e248d0594acbf7d9f6802",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/c54e64bf6a644419bd0e248d0594acbf7d9f6802"
+    },
+    {
+      "path": "src/integrations/supabase",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c7ee9953c089494430f109e5c434ff070f2f4f38",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/c7ee9953c089494430f109e5c434ff070f2f4f38"
+    },
+    {
+      "path": "src/integrations/supabase/auth-attacher.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bc57b798847727bc6af008e343d85fa9be1c3fb",
+      "size": 611,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/5bc57b798847727bc6af008e343d85fa9be1c3fb"
+    },
+    {
+      "path": "src/integrations/supabase/auth-middleware.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "713f8976ec1a2d5167a46fb4da4bf67231fdad57",
+      "size": 2269,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/713f8976ec1a2d5167a46fb4da4bf67231fdad57"
+    },
+    {
+      "path": "src/integrations/supabase/client.server.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ceffc0fade460fbeef4d47eb94111decfc3749dd",
+      "size": 1726,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/ceffc0fade460fbeef4d47eb94111decfc3749dd"
+    },
+    {
+      "path": "src/integrations/supabase/client.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be2c6afe62b47a1c3a8578f4d867b8411db93d3d",
+      "size": 1576,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/be2c6afe62b47a1c3a8578f4d867b8411db93d3d"
+    },
+    {
+      "path": "src/integrations/supabase/types.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc534357b64eab3b13847e9d3ac71acdd0d6f792",
+      "size": 7574,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/fc534357b64eab3b13847e9d3ac71acdd0d6f792"
+    },
+    {
+      "path": "src/lib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6e93a49e410a2ce8fe63b3506565d719be581947",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/6e93a49e410a2ce8fe63b3506565d719be581947"
+    },
+    {
+      "path": "src/lib/admin-setup.functions.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "814490c155aa5fb724e02e5b202d89120c38ab96",
+      "size": 1519,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/814490c155aa5fb724e02e5b202d89120c38ab96"
+    },
+    {
+      "path": "src/lib/error-capture.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "171c9b5800c5b17efc0598eae4c760b3778021e6",
+      "size": 906,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/171c9b5800c5b17efc0598eae4c760b3778021e6"
+    },
+    {
+      "path": "src/lib/error-page.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "725235ce7bdf496daf2d870148978939f4f40a9b",
+      "size": 1371,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/725235ce7bdf496daf2d870148978939f4f40a9b"
+    },
+    {
+      "path": "src/lib/export.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3ec5a1e2c8f7b0b708e66f78582291baa7e2877",
+      "size": 1564,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/b3ec5a1e2c8f7b0b708e66f78582291baa7e2877"
+    },
+    {
+      "path": "src/lib/leads.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b18b1a932da682d13897c1f80a46cdf250a1857",
+      "size": 2411,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/7b18b1a932da682d13897c1f80a46cdf250a1857"
+    },
+    {
+      "path": "src/lib/utils.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5ef193506d07d0459fec4f187af08283094d7c8",
+      "size": 169,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/a5ef193506d07d0459fec4f187af08283094d7c8"
+    },
+    {
+      "path": "src/routeTree.gen.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "815059e150520846d2429673e1f50208af92b2f7",
+      "size": 16183,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/815059e150520846d2429673e1f50208af92b2f7"
+    },
+    {
+      "path": "src/router.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3423d598036579e62f42faec438f868b4bb0bb17",
+      "size": 394,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/3423d598036579e62f42faec438f868b4bb0bb17"
+    },
+    {
+      "path": "src/routes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9e04f68daf74de39ef8ad32ad91c640c8b219538",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/9e04f68daf74de39ef8ad32ad91c640c8b219538"
+    },
+    {
+      "path": "src/routes/__root.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "063f28d2079b0f045849eed500789888ffdef706",
+      "size": 6481,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/063f28d2079b0f045849eed500789888ffdef706"
+    },
+    {
+      "path": "src/routes/about.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "254080c334804dca9f1a41b7cd2eba8ab3e00cd0",
+      "size": 10685,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/254080c334804dca9f1a41b7cd2eba8ab3e00cd0"
+    },
+    {
+      "path": "src/routes/admin.callback-leads.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1eb816463e15a6328eec0bc326ceb3d2ac7d1337",
+      "size": 1317,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/1eb816463e15a6328eec0bc326ceb3d2ac7d1337"
+    },
+    {
+      "path": "src/routes/admin.change-password.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0135a89241515358a5462890e80e2e34406f7788",
+      "size": 4318,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/0135a89241515358a5462890e80e2e34406f7788"
+    },
+    {
+      "path": "src/routes/admin.dashboard.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "614900b531f23ab43c2510ac8f6cc60411086352",
+      "size": 5544,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/614900b531f23ab43c2510ac8f6cc60411086352"
+    },
+    {
+      "path": "src/routes/admin.enquiry-leads.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7006b6ea2bac31f6cc99596b6c71c3f65b9d3063",
+      "size": 1221,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/7006b6ea2bac31f6cc99596b6c71c3f65b9d3063"
+    },
+    {
+      "path": "src/routes/admin.index.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d88fdb61b0de1114a495b4e3f79a5cec1f687a4",
+      "size": 192,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/7d88fdb61b0de1114a495b4e3f79a5cec1f687a4"
+    },
+    {
+      "path": "src/routes/admin.login.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6aee529d5acb5890492e8a4d3cfde0af8cc7fd21",
+      "size": 7435,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/6aee529d5acb5890492e8a4d3cfde0af8cc7fd21"
+    },
+    {
+      "path": "src/routes/admin.new-leads.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d751f8ddf6993f23d6246e60d060355493fd99f",
+      "size": 1891,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/0d751f8ddf6993f23d6246e60d060355493fd99f"
+    },
+    {
+      "path": "src/routes/blog.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56feef4e8a7d1eba40feecb5b1c817d2b878ba9f",
+      "size": 2204,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/56feef4e8a7d1eba40feecb5b1c817d2b878ba9f"
+    },
+    {
+      "path": "src/routes/career.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0549350ff6f62276195fb2b4e41751057e6203a",
+      "size": 4548,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/a0549350ff6f62276195fb2b4e41751057e6203a"
+    },
+    {
+      "path": "src/routes/contact.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6ed0ed62271a83a18a5c7b26bbf7ef124e66c7e",
+      "size": 8571,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/a6ed0ed62271a83a18a5c7b26bbf7ef124e66c7e"
+    },
+    {
+      "path": "src/routes/disclaimer-cookie-policy.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4cac97b5be8da0095f08ca42f573c0d2f179899",
+      "size": 2520,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/c4cac97b5be8da0095f08ca42f573c0d2f179899"
+    },
+    {
+      "path": "src/routes/faqs.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12bc96c40464b4cd7670ad80e6f7e3be13339b2b",
+      "size": 1436,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/12bc96c40464b4cd7670ad80e6f7e3be13339b2b"
+    },
+    {
+      "path": "src/routes/index.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9684135cb3ce4e9e82049ccf2f08aab5d7930b0",
+      "size": 26191,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/e9684135cb3ce4e9e82049ccf2f08aab5d7930b0"
+    },
+    {
+      "path": "src/routes/payments-refund-policy.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f98b443e0c069ba75fe810d40d40a264555ae90d",
+      "size": 2194,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/f98b443e0c069ba75fe810d40d40a264555ae90d"
+    },
+    {
+      "path": "src/routes/privacy-policy.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1bc5364c3cc7718d70cd4ff4733324415b0d8168",
+      "size": 3988,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/1bc5364c3cc7718d70cd4ff4733324415b0d8168"
+    },
+    {
+      "path": "src/routes/services.$slug.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c6fa0b3422bf5fd226eacb38f999a3d508ea10d",
+      "size": 12684,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/9c6fa0b3422bf5fd226eacb38f999a3d508ea10d"
+    },
+    {
+      "path": "src/routes/services.index.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68f93a0d5978669da9716782c5013411b76fe5cc",
+      "size": 6615,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/68f93a0d5978669da9716782c5013411b76fe5cc"
+    },
+    {
+      "path": "src/routes/sitemap[.]xml.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb333eab375ee6aecbbc6482d27b66759e500663",
+      "size": 1173,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/eb333eab375ee6aecbbc6482d27b66759e500663"
+    },
+    {
+      "path": "src/routes/success.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da8e6a98b7268f06775b554859ad2fc36e3f984f",
+      "size": 5572,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/da8e6a98b7268f06775b554859ad2fc36e3f984f"
+    },
+    {
+      "path": "src/routes/terms-conditions.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06243a3d1dc575c60e8692fee1550e631263e5cb",
+      "size": 3516,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/06243a3d1dc575c60e8692fee1550e631263e5cb"
+    },
+    {
+      "path": "src/server.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2451322a896058fb36a94bf3a1f41b5874f7b4fc",
+      "size": 2491,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/2451322a896058fb36a94bf3a1f41b5874f7b4fc"
+    },
+    {
+      "path": "src/start.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "208642748430e10e2785af63b724541bffc87f12",
+      "size": 739,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/208642748430e10e2785af63b724541bffc87f12"
+    },
+    {
+      "path": "src/styles.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b6525eb20b299be9ab2f39176a189263b430c1b",
+      "size": 5695,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/8b6525eb20b299be9ab2f39176a189263b430c1b"
+    },
+    {
+      "path": "src/utils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ae93367c7b02b2359d7427b5eb417b45117ab989",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/ae93367c7b02b2359d7427b5eb417b45117ab989"
+    },
+    {
+      "path": "src/utils/errorHandler.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f99f1207ca8afb580d22c1e8ba4ac78cf7ce4244",
+      "size": 1754,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/f99f1207ca8afb580d22c1e8ba4ac78cf7ce4244"
+    },
+    {
+      "path": "supabase",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ec0a90579ad502e5ed59b199b3ee61002d31342d",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/ec0a90579ad502e5ed59b199b3ee61002d31342d"
+    },
+    {
+      "path": "supabase/config.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d88fc2cde39de51ff59b25ce68a8d9f51b29a10c",
+      "size": 35,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/d88fc2cde39de51ff59b25ce68a8d9f51b29a10c"
+    },
+    {
+      "path": "supabase/migrations",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b2600b7e2edec8bbfe6075d104e710d6548ceef7",
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/trees/b2600b7e2edec8bbfe6075d104e710d6548ceef7"
+    },
+    {
+      "path": "supabase/migrations/20260604174612_055198c5-a61c-4454-9872-bd92e9698756.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d16901da7664ce9644c7ced923861dd471e278d",
+      "size": 1480,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/7d16901da7664ce9644c7ced923861dd471e278d"
+    },
+    {
+      "path": "supabase/migrations/20260606175808_aef2cc15-5ead-4cc6-a70a-849440f482f9.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d40c3af89bd6c6eeae282601de55c0ff05b8615",
+      "size": 514,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/0d40c3af89bd6c6eeae282601de55c0ff05b8615"
+    },
+    {
+      "path": "supabase/migrations/20260607101133_1a65e358-a690-41ce-9808-f0d6bda2da2f.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eaec429ee47da0f1c8d03a39ca5e26ab35b51c23",
+      "size": 2857,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/eaec429ee47da0f1c8d03a39ca5e26ab35b51c23"
+    },
+    {
+      "path": "supabase/migrations/20260613165559_29ea91aa-6831-4251-9539-c2caeb7711a4.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "234b2e67a786f80b1b57a9f79df66f1c885b9fde",
+      "size": 2805,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/234b2e67a786f80b1b57a9f79df66f1c885b9fde"
+    },
+    {
+      "path": "supabase/migrations/20260613165626_904a6521-2e6c-48ee-b398-e5b6e104d56a.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "943667e4f43255ae3cbcead9d044e6fb13b00fbf",
+      "size": 183,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/943667e4f43255ae3cbcead9d044e6fb13b00fbf"
+    },
+    {
+      "path": "tsconfig.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "533d40171d4cbc61370abbffca39ba9256ad5927",
+      "size": 672,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/533d40171d4cbc61370abbffca39ba9256ad5927"
+    },
+    {
+      "path": "vite.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26ef03c80ee9985321c97fd9fe1b5faff9c3678a",
+      "size": 1572,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/26ef03c80ee9985321c97fd9fe1b5faff9c3678a"
+    },
+    {
+      "path": "wrangler.jsonc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d4edf8c51262810ec9c5e7336704dfd2c602c22",
+      "size": 245,
+      "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/0d4edf8c51262810ec9c5e7336704dfd2c602c22"
+    }
+  ],
+  "truncated": false
+}
