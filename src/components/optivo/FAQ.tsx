@@ -1,4 +1,3 @@
-'use client';
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
@@ -29,7 +28,9 @@ export function FAQ({ items }: { items: { q: string; a: string }[] }) {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <p className="px-5 pb-5 text-sm text-muted-foreground md:px-6 md:pb-6 md:text-base">{it.a}</p>
+                  <p className="px-5 pb-5 text-sm text-muted-foreground md:px-6 md:pb-6 md:text-base">
+                    {it.a}
+                  </p>
                 </motion.div>
               )}
             </AnimatePresence>

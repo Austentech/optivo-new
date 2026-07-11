@@ -51,4 +51,18 @@ export const homepageFaqs: FAQItem[] = [
   },
 ];
 
+// Master list — used on the dedicated /faqs page and as the global source.
 export const allFaqs: FAQItem[] = homepageFaqs;
+
+// Helper to build FAQPage JSON-LD for SEO + AEO.
+export function buildFaqJsonLd(items: FAQItem[] = allFaqs) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((it) => ({
+      "@type": "Question",
+      name: it.q,
+      acceptedAnswer: { "@type": "Answer", text: it.a },
+    })),
+  };
+}

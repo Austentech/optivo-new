@@ -4,7 +4,12 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { callLink, waLink, SITE } from "@/data/site";
 
-type PageKey = "home" | "about" | "services" | "success" | "blog" | "contact" | "career" | "faqs";
+export type PageKey = "home" | "about" | "services" | "success" | "blog" | "contact" | "career" | "faqs" | "service-detail";
+
+interface NavigateState {
+  page: PageKey;
+  serviceSlug?: string;
+}
 
 const nav: { key: PageKey; label: string }[] = [
   { key: "home", label: "Home" },
@@ -17,7 +22,7 @@ const nav: { key: PageKey; label: string }[] = [
 
 interface NavbarProps {
   currentPage: PageKey;
-  onNavigate: (page: PageKey) => void;
+  onNavigate: (state: NavigateState) => void;
 }
 
 export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
@@ -32,16 +37,22 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
   }, []);
 
   const handleNav = (key: PageKey) => {
-    onNavigate(key);
+    onNavigate({ page: key });
     setOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const isActive = (key: PageKey) => {
+    if (key === "home") return currentPage === "home";
+    if (key === "services") return currentPage === "services" || currentPage === "service-detail";
+    return currentPage === key;
   };
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "glass border-b border-border/60 shadow-soft" : "bg-transparent"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <button onClick={() => handleNav("home")} className="flex items-center gap-2">
-          <span className="text-xl font-bold text-gradient-brand md:text-2xl">{SITE.name}</span>
+          <img src="/logo.svg" alt="Optivo Solutions" className="h-16 w-auto md:h-20" />
         </button>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -49,7 +60,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
             <button
               key={n.key}
               onClick={() => handleNav(n.key)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition ${currentPage === n.key ? "bg-secondary text-foreground" : "text-foreground/80 hover:bg-secondary hover:text-foreground"}`}
+              className={`rounded-full px-4 py-2 text-sm font-medium transition ${isActive(n.key) ? "bg-secondary text-foreground" : "text-foreground/80 hover:bg-secondary hover:text-foreground"}`}
             >
               {n.label}
             </button>
@@ -83,7 +94,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                 <button
                   key={n.key}
                   onClick={() => handleNav(n.key)}
-                  className={`rounded-lg px-4 py-3 text-left text-base font-medium ${currentPage === n.key ? "bg-secondary text-primary" : "text-foreground/90 hover:bg-secondary"}`}
+                  className={`rounded-lg px-4 py-3 text-left text-base font-medium ${isActive(n.key) ? "bg-secondary text-primary" : "text-foreground/90 hover:bg-secondary"}`}
                 >
                   {n.label}
                 </button>
@@ -97,5 +108,3 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
     </header>
   );
 }
-
-export type { PageKey };

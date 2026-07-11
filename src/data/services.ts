@@ -285,3 +285,7 @@ export const services: Service[] = [
 ];
 
 export const serviceCategories = ["All", ...Array.from(new Set(services.map((s) => s.category)))];
+
+export function getService(slug: string): Service | undefined {
+  return services.find((s) => s.slug === slug);
+}

@@ -1,0 +1,1175 @@
+     1→'use client';
+     2→
+     3→import { useState } from 'react';
+     4→import { AnimatePresence, motion } from 'framer-motion';
+     5→import {
+     6→  ArrowRight, MessageCircle, Phone, Mail, MapPin, Clock, Gauge,
+     7→  Target, Eye, Heart, Search, Users, TrendingUp, Lightbulb,
+     8→  Shield, Zap, Palette, BarChart3, Brain, Globe, Megaphone,
+     9→  Code2, Sparkles, ShoppingBag, Star, ChevronRight, Send,
+    10→  Rocket, Briefcase, HeartPulse, Wifi, Building2, PenTool,
+    11→  Database, Store, MapPinIcon, Building, Layers,
+    12→} from 'lucide-react';
+    13→
+    14→import Navbar from '@/components/optivo/Navbar';
+    15→import Footer from '@/components/optivo/Footer';
+    16→import { Section, Heading, Reveal, Eyebrow } from '@/components/optivo/Section';
+    17→import { StatCounter } from '@/components/optivo/StatCounter';
+    18→import { FAQ } from '@/components/optivo/FAQ';
+    19→import { CTASection } from '@/components/optivo/CTASection';
+    20→import { ClientLogos } from '@/components/optivo/ClientLogos';
+    21→import { BookCall } from '@/components/optivo/BookCall';
+    22→import WhatsAppFloat from '@/components/optivo/WhatsAppFloat';
+    23→import EngagementPopup from '@/components/optivo/EngagementPopup';
+    24→
+    25→import { SITE, waLink, callLink, mapsEmbed, mapsDirections } from '@/data/site';
+    26→import { services, serviceCategories } from '@/data/services';
+    27→import { homepageFaqs, allFaqs } from '@/data/faqs';
+    28→import { reviews } from '@/data/reviews';
+    29→import type { PageKey } from '@/components/optivo/Navbar';
+    30→
+    31→/* ─── Page transition wrapper ─── */
+    32→function PageTransition({ children, key_val }: { children: React.ReactNode; key_val: string }) {
+    33→  return (
+    34→    <AnimatePresence mode="wait">
+    35→      <motion.div
+    36→        key={key_val}
+    37→        initial={{ opacity: 0, y: 12 }}
+    38→        animate={{ opacity: 1, y: 0 }}
+    39→        exit={{ opacity: 0, y: -12 }}
+    40→        transition={{ duration: 0.35, ease: 'easeInOut' }}
+    41→      >
+    42→        {children}
+    43→      </motion.div>
+    44→    </AnimatePresence>
+    45→  );
+    46→}
+    47→
+    48→/* ─── Shared Stats Bar ─── */
+    49→function StatsBar() {
+    50→  return (
+    51→    <Section className="py-12 md:py-16">
+    52→      <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-10">
+    53→        <StatCounter value={4.9} suffix="★" label="Google Rating" decimals={1} />
+    54→        <StatCounter value={52} suffix="+" label="Happy Clients" />
+    55→        <StatCounter value={15000} suffix="+" label="Leads Generated" />
+    56→        <StatCounter value={100} suffix="+" label="Campaigns Managed" />
+    57→      </div>
+    58→    </Section>
+    59→  );
+    60→}
+    61→
+    62→/* ─── Trust bar (smaller, used on home) ─── */
+    63→function TrustBar() {
+    64→  return (
+    65→    <Section className="py-12 md:py-16">
+    66→      <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-10">
+    67→        <StatCounter value={4.9} suffix="★" label="Google Rating" decimals={1} />
+    68→        <StatCounter value={52} suffix="+" label="Happy Clients" />
+    69→        <StatCounter value={15000} suffix="+" label="Leads Generated" />
+    70→        <StatCounter value={100} suffix="+" label="Campaigns Managed" />
+    71→      </div>
+    72→    </Section>
+    73→  );
+    74→}
+    75→
+    76→/* ═══════════════════════════════════════════════════════════════
+    77→   HOME PAGE
+    78→   ═══════════════════════════════════════════════════════════════ */
+    79→function HomePage() {
+    80→  return (
+    81→    <div>
+    82→      {/* 1. Hero */}
+    83→      <section className="relative overflow-hidden bg-gradient-hero pt-32 pb-20 md:pt-40 md:pb-32">
+    84→        <div className="absolute inset-0 grid-bg opacity-10" />
+    85→        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+    86→        <div className="absolute -right-32 -bottom-32 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
+    87→        <div className="relative mx-auto max-w-7xl px-4 md:px-8">
+    88→          <div className="grid items-center gap-12 lg:grid-cols-2">
+    89→            <div>
+    90→              <Eyebrow>Digital Marketing Agency</Eyebrow>
+    91→              <motion.h1
+    92→                initial={{ opacity: 0, y: 24 }}
+    93→                animate={{ opacity: 1, y: 0 }}
+    94→                transition={{ duration: 0.7 }}
+    95→                className="mt-4 text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
+    96→              >
+    97→                Performance-Driven Digital Marketing Solutions That Help Brands{' '}
+    98→                <span className="text-gradient-brand">Grow Faster.</span>
+    99→              </motion.h1>
+   100→              <motion.p
+   101→                initial={{ opacity: 0, y: 16 }}
+   102→                animate={{ opacity: 1, y: 0 }}
+   103→                transition={{ duration: 0.7, delay: 0.15 }}
+   104→                className="mt-6 max-w-xl text-lg text-muted-foreground"
+   105→              >
+   106→                {SITE.tagline}
+   107→              </motion.p>
+   108→              <motion.div
+   109→                initial={{ opacity: 0, y: 16 }}
+   110→                animate={{ opacity: 1, y: 0 }}
+   111→                transition={{ duration: 0.7, delay: 0.3 }}
+   112→                className="mt-8 flex flex-wrap gap-3"
+   113→              >
+   114→                <a
+   115→                  href={waLink()}
+   116→                  target="_blank"
+   117→                  rel="noreferrer"
+   118→                  className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02]"
+   119→                >
+   120→                  Book A Free Consultation
+   121→                </a>
+   122→                <button
+   123→                  onClick={() => {
+   124→                    const el = document.getElementById('services-section');
+   125→                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+   126→                  }}
+   127→                  className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3.5 text-sm font-semibold transition hover:border-primary hover:text-primary"
+   128→                >
+   129→                  View Our Services <ArrowRight size={16} />
+   130→                </button>
+   131→                <a
+   132→                  href={waLink()}
+   133→                  target="_blank"
+   134→                  rel="noreferrer"
+   135→                  className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3.5 text-sm font-semibold transition hover:border-[#25D366] hover:text-[#25D366]"
+   136→                >
+   137→                  <MessageCircle size={16} /> Chat on WhatsApp
+   138→                </a>
+   139→              </motion.div>
+   140→            </div>
+   141→
+   142→            {/* Hero Visual */}
+   143→            <motion.div
+   144→              initial={{ opacity: 0, scale: 0.95 }}
+   145→              animate={{ opacity: 1, scale: 1 }}
+   146→              transition={{ duration: 0.8, delay: 0.3 }}
+   147→              className="relative"
+   148→            >
+   149→              <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-glow md:p-8">
+   150→                <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gradient-brand opacity-15 blur-3xl" />
+   151→                <div className="relative">
+   152→                  <div className="flex items-center justify-between">
+   153→                    <div>
+   154→                      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Campaign Performance</p>
+   155→                      <p className="mt-1 text-2xl font-bold text-gradient-brand">+250% Growth</p>
+   156→                    </div>
+   157→                    <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-brand text-white">
+   158→                      <TrendingUp size={18} />
+   159→                    </div>
+   160→                  </div>
+   161→                  <div className="mt-6">
+   162→                    <svg viewBox="0 0 200 80" className="h-24 w-full">
+   163→                      <defs>
+   164→                        <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+   165→                          <stop offset="0%" stopColor="oklch(0.52 0.24 262)" stopOpacity="0.5" />
+   166→                          <stop offset="100%" stopColor="oklch(0.52 0.24 262)" stopOpacity="0" />
+   167→                        </linearGradient>
+   168→                      </defs>
+   169→                      <path d="M0,70 C30,60 50,55 70,45 C90,35 110,40 130,25 C150,12 180,18 200,5 L200,80 L0,80 Z" fill="url(#g1)" />
+   170→                      <path d="M0,70 C30,60 50,55 70,45 C90,35 110,40 130,25 C150,12 180,18 200,5" fill="none" stroke="oklch(0.52 0.24 262)" strokeWidth="2" />
+   171→                    </svg>
+   172→                  </div>
+   173→                  <div className="mt-4 grid grid-cols-3 gap-3">
+   174→                    <div className="rounded-xl bg-secondary/50 p-3 text-center">
+   175→                      <p className="text-lg font-bold">52+</p>
+   176→                      <p className="text-[11px] text-muted-foreground">Clients</p>
+   177→                    </div>
+   178→                    <div className="rounded-xl bg-secondary/50 p-3 text-center">
+   179→                      <p className="text-lg font-bold">15K+</p>
+   180→                      <p className="text-[11px] text-muted-foreground">Leads</p>
+   181→                    </div>
+   182→                    <div className="rounded-xl bg-secondary/50 p-3 text-center">
+   183→                      <p className="text-lg font-bold">100+</p>
+   184→                      <p className="text-[11px] text-muted-foreground">Campaigns</p>
+   185→                    </div>
+   186→                  </div>
+   187→                </div>
+   188→              </div>
+   189→              {/* Floating stat cards */}
+   190→              <div className="absolute -left-4 top-8 rounded-2xl border border-border bg-card p-3 shadow-glow">
+   191→                <div className="flex items-center gap-2">
+   192→                  <div className="grid h-8 w-8 place-items-center rounded-full bg-green-100 text-green-600">
+   193→                    <TrendingUp size={14} />
+   194→                  </div>
+   195→                  <div>
+   196→                    <p className="text-xs font-bold">+312%</p>
+   197→                    <p className="text-[10px] text-muted-foreground">Organic Traffic</p>
+   198→                  </div>
+   199→                </div>
+   200→              </div>
+   201→              <div className="absolute -right-4 bottom-12 rounded-2xl border border-border bg-card p-3 shadow-glow">
+   202→                <div className="flex items-center gap-2">
+   203→                  <div className="grid h-8 w-8 place-items-center rounded-full bg-blue-100 text-blue-600">
+   204→                    <Users size={14} />
+   205→                  </div>
+   206→                  <div>
+   207→                    <p className="text-xs font-bold">4.9★</p>
+   208→                    <p className="text-[10px] text-muted-foreground">Google Rating</p>
+   209→                  </div>
+   210→                </div>
+   211→              </div>
+   212→            </motion.div>
+   213→          </div>
+   214→        </div>
+   215→      </section>
+   216→
+   217→      {/* 2. SEO Description */}
+   218→      <Section>
+   219→        <Reveal>
+   220→          <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-6 shadow-soft md:p-8">
+   221→            <div className="flex items-start gap-4">
+   222→              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
+   223→                <Gauge size={24} />
+   224→              </div>
+   225→              <div>
+   226→                <h3 className="text-xl font-bold md:text-2xl">Digital Marketing Agency Focused on Growth</h3>
+   227→                <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
+   228→                  Optivo Solutions is a full-service digital marketing and branding agency helping businesses grow through SEO, social media marketing, performance advertising, website development, branding, PR, lead generation and AI search optimization strategies. We deliver measurable results for startups, local businesses and growing enterprises.
+   229→                </p>
+   230→              </div>
+   231→            </div>
+   232→          </div>
+   233→        </Reveal>
+   234→      </Section>
+   235→
+   236→      {/* 3. Trust Bar */}
+   237→      <TrustBar />
+   238→
+   239→      {/* 4. Services */}
+   240→      <Section id="services-section">
+   241→        <Heading
+   242→          center
+   243→          eyebrow="What We Do"
+   244→          title={<>Full-funnel growth — <span className="text-gradient-brand">end to end.</span></>}
+   245→          subtitle="From brand strategy to performance ads — every service connected to your revenue goals."
+   246→        />
+   247→        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+   248→          {services.map((s, i) => {
+   249→            const Icon = s.icon;
+   250→            return (
+   251→              <Reveal key={s.slug} delay={i * 0.05}>
+   252→                <div className="group h-full rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:border-primary/40 hover:shadow-glow">
+   253→                  <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-gradient-brand group-hover:text-white">
+   254→                    <Icon size={22} />
+   255→                  </div>
+   256→                  <h3 className="mt-4 text-lg font-bold">{s.title}</h3>
+   257→                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.short}</p>
+   258→                  <button
+   259→                    onClick={() => {
+   260→                      const el = document.getElementById('contact-section');
+   261→                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+   262→                    }}
+   263→                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition hover:gap-2"
+   264→                  >
+   265→                    Learn more <ChevronRight size={14} />
+   266→                  </button>
+   267→                </div>
+   268→              </Reveal>
+   269→            );
+   270→          })}
+   271→        </div>
+   272→      </Section>
+   273→
+   274→      {/* 5. Client Logos */}
+   275→      <ClientLogos />
+   276→
+   277→      {/* 6. Growth Pillars */}
+   278→      <Section>
+   279→        <Heading
+   280→          center
+   281→          eyebrow="Why Growth Matters"
+   282→          title={<>Built for <span className="text-gradient-brand">measurable growth.</span></>}
+   283→        />
+   284→        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+   285→          {[
+   286→            { icon: TrendingUp, title: 'Business Growth', desc: 'Revenue-focused strategies that scale with your ambition.' },
+   287→            { icon: Eye, title: 'Digital Visibility', desc: 'Show up where your customers are searching and scrolling.' },
+   288→            { icon: Megaphone, title: 'Lead Generation', desc: 'Consistent flow of qualified prospects, every single month.' },
+   289→            { icon: Sparkles, title: 'Brand Positioning', desc: 'Stand out in a crowded market with a clear, memorable identity.' },
+   290→            { icon: Brain, title: 'AI Search Optimization', desc: 'Get cited by ChatGPT, Perplexity, Gemini and voice search.' },
+   291→            { icon: Globe, title: 'Market Authority', desc: 'Become the recognized leader in your category.' },
+   292→          ].map((item, i) => (
+   293→            <Reveal key={item.title} delay={i * 0.05}>
+   294→              <div className="rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:border-primary/40 hover:shadow-glow">
+   295→                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
+   296→                  <item.icon size={22} />
+   297→                </div>
+   298→                <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
+   299→                <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+   300→              </div>
+   301→            </Reveal>
+   302→          ))}
+   303→        </div>
+   304→      </Section>
+   305→
+   306→      {/* 7. Why Choose Us */}
+   307→      <Section className="bg-secondary/30">
+   308→        <Heading
+   309→          center
+   310→          eyebrow="Why Choose Us"
+   311→          title={<>Built for <span className="text-gradient-brand">ambitious brands.</span></>}
+   312→        />
+   313→        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+   314→          {[
+   315→            { num: '01', title: 'Expert Team', desc: 'Senior strategists, designers, developers and media buyers — all in-house, never outsourced.' },
+   316→            { num: '02', title: 'Result Driven Strategy', desc: 'Every initiative is tied to leads, revenue or measurable brand growth.' },
+   317→            { num: '03', title: 'Transparent Reporting', desc: 'Live dashboards, clear KPIs, no black boxes — ever.' },
+   318→            { num: '04', title: 'Fast Support', desc: 'Average response time under 30 minutes across all channels.' },
+   319→            { num: '05', title: 'Creative Solutions', desc: 'Scroll-stopping creatives, data-driven campaigns and out-of-the-box ideas.' },
+   320→            { num: '06', title: 'ROI Focused Marketing', desc: 'Every rupee tracked, attributed and optimized for maximum return.' },
+   321→          ].map((item, i) => (
+   322→            <Reveal key={item.num} delay={i * 0.05}>
+   323→              <div className="flex gap-4 rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:border-primary/40 hover:shadow-glow">
+   324→                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-brand text-sm font-bold text-white">
+   325→                  {item.num}
+   326→                </span>
+   327→                <div>
+   328→                  <h3 className="font-bold">{item.title}</h3>
+   329→                  <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
+   330→                </div>
+   331→              </div>
+   332→            </Reveal>
+   333→          ))}
+   334→        </div>
+   335→      </Section>
+   336→
+   337→      {/* 8. Process */}
+   338→      <Section>
+   339→        <Heading
+   340→          center
+   341→          eyebrow="Our Process"
+   342→          title={<>A proven <span className="text-gradient-brand">6-step growth system.</span></>}
+   343→          subtitle="From first conversation to measurable results — a structured, repeatable framework."
+   344→        />
+   345→        <div className="relative mx-auto max-w-3xl">
+   346→          <div className="absolute left-6 top-0 bottom-0 w-px bg-border md:left-1/2 md:-translate-x-px" />
+   347→          {[
+   348→            { title: 'Discovery', desc: 'Deep-dive into your brand, audience, competitors and current performance.' },
+   349→            { title: 'Planning', desc: 'Calendars, creative briefs, asset lists and approval workflows.' },
+   350→            { title: 'Strategy', desc: 'Custom roadmap with channels, KPIs, positioning and timeline.' },
+   351→            { title: 'Execution', desc: 'Launch campaigns, content, automations and optimizations.' },
+   352→            { title: 'Optimization', desc: 'Weekly iteration — kill what\'s not working, double down on what is.' },
+   353→            { title: 'Growth', desc: 'Transparent monthly dashboards tied to real business outcomes.' },
+   354→          ].map((step, i) => (
+   355→            <Reveal key={step.title} delay={i * 0.08}>
+   356→              <div className={`relative mb-10 flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+   357→                <div className="absolute left-6 z-10 grid h-12 w-12 -translate-x-1/2 place-items-center rounded-full bg-gradient-brand text-sm font-bold text-white ring-4 ring-background md:left-1/2">
+   358→                  {i + 1}
+   359→                </div>
+   360→                <div className={`ml-12 md:ml-0 md:w-1/2 ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
+   361→                  <h3 className="text-lg font-bold">{step.title}</h3>
+   362→                  <p className="mt-1 text-sm text-muted-foreground">{step.desc}</p>
+   363→                </div>
+   364→              </div>
+   365→            </Reveal>
+   366→          ))}
+   367→        </div>
+   368→      </Section>
+   369→
+   370→      {/* 9. Home FAQ */}
+   371→      <Section className="bg-secondary/30">
+   372→        <Heading
+   373→          center
+   374→          eyebrow="FAQs"
+   375→          title="Answers to common questions."
+   376→          subtitle="Everything you need to know about working with us."
+   377→        />
+   378→        <FAQ items={homepageFaqs} />
+   379→      </Section>
+   380→
+   381→      {/* 10. CTA Section */}
+   382→      <CTASection />
+   383→
+   384→      {/* 11. Contact Strip */}
+   385→      <Section id="contact-section">
+   386→        <Reveal>
+   387→          <div className="mx-auto max-w-3xl text-center">
+   388→            <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Prefer the old-school way?</p>
+   389→            <h3 className="mt-2 text-2xl font-bold md:text-3xl">Reach out directly</h3>
+   390→            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
+   391→              <a
+   392→                href={callLink()}
+   393→                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold transition hover:border-primary hover:text-primary"
+   394→              >
+   395→                <Phone size={16} /> {SITE.phones[0]}
+   396→              </a>
+   397→              <a
+   398→                href={`mailto:${SITE.email}`}
+   399→                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold transition hover:border-primary hover:text-primary"
+   400→              >
+   401→                <Mail size={16} /> {SITE.email}
+   402→              </a>
+   403→            </div>
+   404→          </div>
+   405→        </Reveal>
+   406→      </Section>
+   407→    </div>
+   408→  );
+   409→}
+   410→
+   411→/* ═══════════════════════════════════════════════════════════════
+   412→   ABOUT PAGE
+   413→   ═══════════════════════════════════════════════════════════════ */
+   414→function AboutPage() {
+   415→  return (
+   416→    <div>
+   417→      {/* Hero */}
+   418→      <section className="relative overflow-hidden bg-gradient-hero pt-32 pb-20 md:pt-40 md:pb-28">
+   419→        <div className="absolute inset-0 grid-bg opacity-10" />
+   420→        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+   421→        <div className="absolute -right-32 -bottom-32 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
+   422→        <div className="relative mx-auto max-w-7xl px-4 md:px-8 text-center">
+   423→          <Eyebrow>About Optivo Solutions</Eyebrow>
+   424→          <motion.h1
+   425→            initial={{ opacity: 0, y: 24 }}
+   426→            animate={{ opacity: 1, y: 0 }}
+   427→            transition={{ duration: 0.7 }}
+   428→            className="mt-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+   429→          >
+   430→            We're a growth agency built for <span className="text-gradient-brand">ambitious brands.</span>
+   431→          </motion.h1>
+   432→          <motion.p
+   433→            initial={{ opacity: 0, y: 16 }}
+   434→            animate={{ opacity: 1, y: 0 }}
+   435→            transition={{ duration: 0.7, delay: 0.15 }}
+   436→            className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground"
+   437→          >
+   438→            Helping Businesses Build Stronger Digital Presence
+   439→          </motion.p>
+   440→        </div>
+   441→      </section>
+   442→
+   443→      {/* Mission / Vision / Values */}
+   444→      <Section>
+   445→        <div className="grid gap-6 md:grid-cols-3">
+   446→          {[
+   447→            { icon: Target, title: 'Our Mission', desc: 'To help businesses grow through data-driven digital marketing, creative branding and measurable results that create lasting impact.' },
+   448→            { icon: Eye, title: 'Our Vision', desc: 'To become the most trusted growth partner for ambitious businesses across India — known for transparency, creativity and results.' },
+   449→            { icon: Heart, title: 'Our Values', desc: 'Transparency, ownership, creativity and client obsession. We treat every brand like our own and every result like it matters.' },
+   450→          ].map((item, i) => (
+   451→            <Reveal key={item.title} delay={i * 0.1}>
+   452→              <div className="h-full rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:border-primary/40 hover:shadow-glow">
+   453→                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
+   454→                  <item.icon size={22} />
+   455→                </div>
+   456→                <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
+   457→                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+   458→              </div>
+   459→            </Reveal>
+   460→          ))}
+   461→        </div>
+   462→      </Section>
+   463→
+   464→      {/* Our Story */}
+   465→      <Section className="bg-secondary/30">
+   466→        <Heading
+   467→          center
+   468→          eyebrow="Our Story"
+   469→          title={<>How <span className="text-gradient-brand">Optivo Solutions</span> began.</>}
+   470→        />
+   471→        <Reveal>
+   472→          <div className="mx-auto max-w-3xl space-y-5 text-base leading-relaxed text-muted-foreground">
+   473→            <p>
+   474→              Optivo Solutions was founded with a simple belief: every business — whether a local clinic, a growing D2C brand or an established enterprise — deserves access to world-class digital marketing. We saw too many agencies delivering vanity metrics and zero accountability, and we knew there had to be a better way.
+   475→            </p>
+   476→            <p>
+   477→              We started as a small, hungry team focused on SEO and social media, and quickly grew into a full-service digital marketing and branding agency. Today, we serve 52+ clients across industries like healthcare, real estate, education, e-commerce, hospitality and professional services — delivering measurable growth through strategy, creativity and technology.
+   478→            </p>
+   479→            <p>
+   480→              Our team combines senior strategists, creative designers, skilled developers and performance marketers — all working in-house, never outsourced. Every campaign is built on data, every creative is crafted with intent, and every report is tied to real business outcomes. That's the Optivo way.
+   481→            </p>
+   482→          </div>
+   483→        </Reveal>
+   484→      </Section>
+   485→
+   486→      {/* Stats */}
+   487→      <StatsBar />
+   488→
+   489→      {/* Specializations */}
+   490→      <Section>
+   491→        <Heading
+   492→          center
+   493→          eyebrow="Specializations"
+   494→          title={<>Areas we <span className="text-gradient-brand">excel in.</span></>}
+   495→        />
+   496→        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+   497→          {[
+   498→            { icon: Search, title: 'SEO & Local SEO' },
+   499→            { icon: Megaphone, title: 'Social Media Marketing' },
+   500→            { icon: Target, title: 'Meta & Google Ads' },
+   501→            { icon: Code2, title: 'Website Development' },
+   502→            { icon: Sparkles, title: 'Branding & Design' },
+   503→            { icon: Brain, title: 'AEO & GEO Optimization' },
+   504→            { icon: ShoppingBag, title: 'E-Commerce Marketing' },
+   505→            { icon: Star, title: 'PR & Influencer Marketing' },
+   506→            { icon: MapPinIcon, title: 'Google Business Profile' },
+   507→            { icon: Users, title: 'Lead Generation' },
+   508→          ].map((item, i) => (
+   509→            <Reveal key={item.title} delay={i * 0.04}>
+   510→              <div className="flex items-center gap-3 rounded-2xl border border-border bg-card p-4 shadow-soft transition hover:border-primary/40 hover:shadow-glow">
+   511→                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+   512→                  <item.icon size={18} />
+   513→                </div>
+   514→                <span className="text-sm font-semibold">{item.title}</span>
+   515→              </div>
+   516→            </Reveal>
+   517→          ))}
+   518→        </div>
+   519→      </Section>
+   520→
+   521→      {/* Team Pods */}
+   522→      <Section className="bg-secondary/30">
+   523→        <Heading
+   524→          center
+   525→          eyebrow="Our Team"
+   526→          title={<>Specialized <span className="text-gradient-brand">team pods.</span></>}
+   527→          subtitle="Each pod is a focused unit of experts delivering deep expertise in their domain."
+   528→        />
+   529→        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+   530→          {[
+   531→            { icon: Lightbulb, title: 'Strategy Pod', desc: 'Research, planning, positioning and growth roadmaps.' },
+   532→            { icon: Palette, title: 'Creative Studio', desc: 'Design, video, branding and content production.' },
+   533→            { icon: BarChart3, title: 'Performance Pod', desc: 'Paid media, analytics, optimization and reporting.' },
+   534→            { icon: Code2, title: 'Engineering', desc: 'Web development, automation and technical SEO.' },
+   535→            { icon: Store, title: 'E-Commerce Pod', desc: 'Shopify, WooCommerce, product ads and retention.' },
+   536→            { icon: MapPinIcon, title: 'Local SEO Pod', desc: 'Google Business Profile, maps and local search.' },
+   537→            { icon: Building, title: 'Enterprise Pod', desc: 'Multi-location, large-scale and cross-channel strategies.' },
+   538→            { icon: PenTool, title: 'Content & AEO Studio', desc: 'AI search optimization, copywriting and content strategy.' },
+   539→          ].map((item, i) => (
+   540→            <Reveal key={item.title} delay={i * 0.05}>
+   541→              <div className="h-full rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:border-primary/40 hover:shadow-glow">
+   542→                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
+   543→                  <item.icon size={22} />
+   544→                </div>
+   545→                <h3 className="mt-4 text-base font-bold">{item.title}</h3>
+   546→                <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+   547→              </div>
+   548→            </Reveal>
+   549→          ))}
+   550→        </div>
+   551→      </Section>
+   552→
+   553→      <CTASection />
+   554→    </div>
+   555→  );
+   556→}
+   557→
+   558→/* ═══════════════════════════════════════════════════════════════
+   559→   SERVICES PAGE
+   560→   ═══════════════════════════════════════════════════════════════ */
+   561→function ServicesPage() {
+   562→  const [search, setSearch] = useState('');
+   563→  const [activeCat, setActiveCat] = useState('All');
+   564→
+   565→  const filtered = services.filter((s) => {
+   566→    const matchSearch = s.title.toLowerCase().includes(search.toLowerCase()) || s.short.toLowerCase().includes(search.toLowerCase());
+   567→    const matchCat = activeCat === 'All' || s.category === activeCat;
+   568→    return matchSearch && matchCat;
+   569→  });
+   570→
+   571→  return (
+   572→    <div>
+   573→      {/* Hero */}
+   574→      <section className="relative overflow-hidden bg-gradient-hero pt-32 pb-20 md:pt-40 md:pb-28">
+   575→        <div className="absolute inset-0 grid-bg opacity-10" />
+   576→        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+   577→        <div className="absolute -right-32 -bottom-32 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
+   578→        <div className="relative mx-auto max-w-7xl px-4 md:px-8 text-center">
+   579→          <Eyebrow>Our Services</Eyebrow>
+   580→          <motion.h1
+   581→            initial={{ opacity: 0, y: 24 }}
+   582→            animate={{ opacity: 1, y: 0 }}
+   583→            transition={{ duration: 0.7 }}
+   584→            className="mt-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+   585→          >
+   586→            Full-funnel growth — <span className="text-gradient-brand">end to end.</span>
+   587→          </motion.h1>
+   588→          <motion.p
+   589→            initial={{ opacity: 0, y: 16 }}
+   590→            animate={{ opacity: 1, y: 0 }}
+   591→            transition={{ duration: 0.7, delay: 0.15 }}
+   592→            className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground"
+   593→          >
+   594→            From brand strategy to performance ads — every service connected to your revenue goals.
+   595→          </motion.p>
+   596→        </div>
+   597→      </section>
+   598→
+   599→      {/* Filter + Grid */}
+   600→      <Section>
+   601→        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+   602→          <div className="relative w-full md:max-w-sm">
+   603→            <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+   604→            <input
+   605→              type="text"
+   606→              placeholder="Search services…"
+   607→              value={search}
+   608→              onChange={(e) => setSearch(e.target.value)}
+   609→              className="w-full rounded-xl border border-border bg-card py-2.5 pl-10 pr-4 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+   610→            />
+   611→          </div>
+   612→          <div className="flex flex-wrap gap-2">
+   613→            {serviceCategories.map((cat) => (
+   614→              <button
+   615→                key={cat}
+   616→                onClick={() => setActiveCat(cat)}
+   617→                className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+   618→                  activeCat === cat
+   619→                    ? 'bg-gradient-brand text-white shadow-glow'
+   620→                    : 'border border-border bg-card text-foreground/80 hover:border-primary hover:text-primary'
+   621→                }`}
+   622→              >
+   623→                {cat}
+   624→              </button>
+   625→            ))}
+   626→          </div>
+   627→        </div>
+   628→
+   629→        {filtered.length === 0 ? (
+   630→          <div className="py-20 text-center text-muted-foreground">No services match your search.</div>
+   631→        ) : (
+   632→          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+   633→            {filtered.map((s, i) => {
+   634→              const Icon = s.icon;
+   635→              return (
+   636→                <Reveal key={s.slug} delay={i * 0.04}>
+   637→                  <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:border-primary/40 hover:shadow-glow">
+   638→                    <div className="flex items-start justify-between">
+   639→                      <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-gradient-brand group-hover:text-white">
+   640→                        <Icon size={22} />
+   641→                      </div>
+   642→                      <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-0.5 text-xs font-semibold text-primary">
+   643→                        {s.category}
+   644→                      </span>
+   645→                    </div>
+   646→                    <h3 className="mt-4 text-lg font-bold">{s.title}</h3>
+   647→                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{s.short}</p>
+   648→                    <div className="mt-4 flex flex-wrap gap-1.5">
+   649→                      {s.included.slice(0, 3).map((tag) => (
+   650→                        <span key={tag} className="rounded-full bg-secondary px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground">
+   651→                          {tag}
+   652→                        </span>
+   653→                      ))}
+   654→                      {s.included.length > 3 && (
+   655→                        <span className="rounded-full bg-secondary px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground">
+   656→                          +{s.included.length - 3} more
+   657→                        </span>
+   658→                      )}
+   659→                    </div>
+   660→                    <button
+   661→                      onClick={() => {
+   662→                        const el = document.getElementById('contact-section');
+   663→                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+   664→                      }}
+   665→                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition hover:gap-2"
+   666→                    >
+   667→                      Learn more <ChevronRight size={14} />
+   668→                    </button>
+   669→                  </div>
+   670→                </Reveal>
+   671→              );
+   672→            })}
+   673→          </div>
+   674→        )}
+   675→      </Section>
+   676→
+   677→      <CTASection />
+   678→    </div>
+   679→  );
+   680→}
+   681→
+   682→/* ═══════════════════════════════════════════════════════════════
+   683→   CONTACT PAGE
+   684→   ═══════════════════════════════════════════════════════════════ */
+   685→function ContactPage() {
+   686→  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
+   687→  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+   688→    setForm((d) => ({ ...d, [k]: e.target.value }));
+   689→
+   690→  const handleSubmit = () => {
+   691→    const msg = [
+   692→      'New Enquiry — Optivo Solutions',
+   693→      '',
+   694→      `Name: ${form.name}`,
+   695→      `Phone: ${form.phone}`,
+   696→      `Email: ${form.email}`,
+   697→      `Message: ${form.message}`,
+   698→    ].join('\n');
+   699→    window.open(waLink(msg), '_blank');
+   700→  };
+   701→
+   702→  return (
+   703→    <div>
+   704→      {/* Hero */}
+   705→      <section className="relative overflow-hidden bg-gradient-hero pt-32 pb-20 md:pt-40 md:pb-28">
+   706→        <div className="absolute inset-0 grid-bg opacity-10" />
+   707→        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+   708→        <div className="absolute -right-32 -bottom-32 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
+   709→        <div className="relative mx-auto max-w-7xl px-4 md:px-8 text-center">
+   710→          <Eyebrow>Contact Us</Eyebrow>
+   711→          <motion.h1
+   712→            initial={{ opacity: 0, y: 24 }}
+   713→            animate={{ opacity: 1, y: 0 }}
+   714→            transition={{ duration: 0.7 }}
+   715→            className="mt-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+   716→          >
+   717→            Let's talk <span className="text-gradient-brand">growth.</span>
+   718→          </motion.h1>
+   719→          <motion.p
+   720→            initial={{ opacity: 0, y: 16 }}
+   721→            animate={{ opacity: 1, y: 0 }}
+   722→            transition={{ duration: 0.7, delay: 0.15 }}
+   723→            className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground"
+   724→          >
+   725→            Whether you're ready to start or just exploring — we'd love to hear from you.
+   726→          </motion.p>
+   727→        </div>
+   728→      </section>
+   729→
+   730→      {/* Contact Cards */}
+   731→      <Section id="contact-section">
+   732→        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+   733→          {[
+   734→            { icon: MapPin, title: 'Visit Us', desc: `${SITE.address.line1}, ${SITE.address.line2}`, href: mapsDirections, linkText: 'Get Directions' },
+   735→            { icon: Phone, title: 'Call Us', desc: SITE.phones[0], href: callLink(), linkText: 'Call Now' },
+   736→            { icon: Mail, title: 'Email', desc: SITE.email, href: `mailto:${SITE.email}`, linkText: 'Send Email' },
+   737→            { icon: Clock, title: 'Hours', desc: SITE.hours, href: undefined, linkText: undefined },
+   738→          ].map((item, i) => (
+   739→            <Reveal key={item.title} delay={i * 0.08}>
+   740→              <div className="h-full rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:border-primary/40 hover:shadow-glow">
+   741→                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
+   742→                  <item.icon size={22} />
+   743→                </div>
+   744→                <h3 className="mt-4 text-base font-bold">{item.title}</h3>
+   745→                <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
+   746→                {item.href && item.linkText && (
+   747→                  <a
+   748→                    href={item.href}
+   749→                    target={item.href.startsWith('http') ? '_blank' : undefined}
+   750→                    rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+   751→                    className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary transition hover:gap-2"
+   752→                  >
+   753→                    {item.linkText} <ChevronRight size={14} />
+   754→                  </a>
+   755→                )}
+   756→              </div>
+   757→            </Reveal>
+   758→          ))}
+   759→        </div>
+   760→      </Section>
+   761→
+   762→      {/* Contact Form + BookCall */}
+   763→      <Section className="bg-secondary/30">
+   764→        <div className="grid gap-8 lg:grid-cols-2">
+   765→          {/* Contact Form */}
+   766→          <Reveal>
+   767→            <div className="rounded-3xl border border-border bg-card p-6 shadow-soft md:p-10">
+   768→              <h3 className="text-2xl font-bold md:text-3xl">Send us a message</h3>
+   769→              <p className="mt-1 text-sm text-muted-foreground">Fill in the form and we'll get back to you within 30 minutes.</p>
+   770→              <div className="mt-6 grid gap-4 md:grid-cols-2">
+   771→                <label className="block">
+   772→                  <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Your Name</span>
+   773→                  <input
+   774→                    type="text"
+   775→                    value={form.name}
+   776→                    onChange={set('name')}
+   777→                    placeholder="e.g. Rohan Sharma"
+   778→                    className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+   779→                  />
+   780→                </label>
+   781→                <label className="block">
+   782→                  <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Phone</span>
+   783→                  <input
+   784→                    type="tel"
+   785→                    value={form.phone}
+   786→                    onChange={set('phone')}
+   787→                    placeholder="+91 ..."
+   788→                    className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+   789→                  />
+   790→                </label>
+   791→                <label className="block md:col-span-2">
+   792→                  <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Email</span>
+   793→                  <input
+   794→                    type="email"
+   795→                    value={form.email}
+   796→                    onChange={set('email')}
+   797→                    placeholder="you@company.com"
+   798→                    className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+   799→                  />
+   800→                </label>
+   801→                <label className="block md:col-span-2">
+   802→                  <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Message</span>
+   803→                  <textarea
+   804→                    value={form.message}
+   805→                    onChange={set('message')}
+   806→                    rows={4}
+   807→                    placeholder="Tell us about your business and goals…"
+   808→                    className="w-full resize-none rounded-xl border border-border bg-background px-4 py-2.5 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+   809→                  />
+   810→                </label>
+   811→              </div>
+   812→              <button
+   813→                onClick={handleSubmit}
+   814→                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-brand px-6 py-3.5 font-semibold text-white shadow-glow transition hover:scale-[1.01] md:w-auto"
+   815→              >
+   816→                <Send size={16} /> Send via WhatsApp
+   817→              </button>
+   818→            </div>
+   819→          </Reveal>
+   820→          <Reveal delay={0.1}>
+   821→            <BookCall />
+   822→          </Reveal>
+   823→        </div>
+   824→      </Section>
+   825→
+   826→      {/* Map */}
+   827→      <Section>
+   828→        <Reveal>
+   829→          <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
+   830→            <iframe
+   831→              src={mapsEmbed}
+   832→              width="100%"
+   833→              height="400"
+   834→              style={{ border: 0 }}
+   835→              allowFullScreen
+   836→              loading="lazy"
+   837→              referrerPolicy="no-referrer-when-downgrade"
+   838→              title="Optivo Solutions Location"
+   839→              className="w-full"
+   840→            />
+   841→          </div>
+   842→        </Reveal>
+   843→      </Section>
+   844→    </div>
+   845→  );
+   846→}
+   847→
+   848→/* ═══════════════════════════════════════════════════════════════
+   849→   BLOG PAGE
+   850→   ═══════════════════════════════════════════════════════════════ */
+   851→function BlogPage() {
+   852→  return (
+   853→    <div>
+   854→      {/* Coming Soon */}
+   855→      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-hero">
+   856→        <div className="absolute inset-0 grid-bg opacity-10" />
+   857→        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+   858→        <div className="absolute -right-32 -bottom-32 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
+   859→        <div className="relative text-center px-4">
+   860→          <motion.div
+   861→            initial={{ opacity: 0, scale: 0.9 }}
+   862→            animate={{ opacity: 1, scale: 1 }}
+   863→            transition={{ duration: 0.7, type: 'spring', damping: 18 }}
+   864→          >
+   865→            <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-gradient-brand text-white shadow-glow">
+   866→              <PenTool size={36} />
+   867→            </div>
+   868→            <h1 className="mt-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+   869→              Something great is <span className="text-gradient-brand">coming soon.</span>
+   870→            </h1>
+   871→            <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+   872→              We're crafting insightful articles on digital marketing, growth strategies and industry trends. Stay tuned.
+   873→            </p>
+   874→          </motion.div>
+   875→        </div>
+   876→      </section>
+   877→
+   878→      <CTASection />
+   879→    </div>
+   880→  );
+   881→}
+   882→
+   883→/* ═══════════════════════════════════════════════════════════════
+   884→   CAREER PAGE
+   885→   ═══════════════════════════════════════════════════════════════ */
+   886→function CareerPage() {
+   887→  return (
+   888→    <div>
+   889→      {/* Hero */}
+   890→      <section className="relative overflow-hidden bg-gradient-hero pt-32 pb-20 md:pt-40 md:pb-28">
+   891→        <div className="absolute inset-0 grid-bg opacity-10" />
+   892→        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+   893→        <div className="absolute -right-32 -bottom-32 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
+   894→        <div className="relative mx-auto max-w-7xl px-4 md:px-8 text-center">
+   895→          <Eyebrow>Career at Optivo</Eyebrow>
+   896→          <motion.h1
+   897→            initial={{ opacity: 0, y: 24 }}
+   898→            animate={{ opacity: 1, y: 0 }}
+   899→            transition={{ duration: 0.7 }}
+   900→            className="mt-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+   901→          >
+   902→            Build the next big agency <span className="text-gradient-brand">with us.</span>
+   903→          </motion.h1>
+   904→          <motion.p
+   905→            initial={{ opacity: 0, y: 16 }}
+   906→            animate={{ opacity: 1, y: 0 }}
+   907→            transition={{ duration: 0.7, delay: 0.15 }}
+   908→            className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground"
+   909→          >
+   910→            We're looking for passionate people who want to grow fast, own their work and make a real impact.
+   911→          </motion.p>
+   912→        </div>
+   913→      </section>
+   914→
+   915→      {/* Perks */}
+   916→      <Section>
+   917→        <Heading
+   918→          center
+   919→          eyebrow="Perks & Culture"
+   920→          title={<>Why people <span className="text-gradient-brand">love working here.</span></>}
+   921→        />
+   922→        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+   923→          {[
+   924→            { icon: Rocket, title: 'Speed & Ownership', desc: 'Move fast, take ownership and ship things that matter. No bureaucracy.' },
+   925→            { icon: HeartPulse, title: 'Health & Wellbeing', desc: 'Medical coverage, mental health support and a culture that respects balance.' },
+   926→            { icon: Users, title: 'Senior Peers', desc: 'Work alongside experienced strategists, designers and marketers every day.' },
+   927→            { icon: Wifi, title: 'Hybrid + Remote', desc: 'Flexible work environment — office, home or hybrid. We trust you.' },
+   928→          ].map((item, i) => (
+   929→            <Reveal key={item.title} delay={i * 0.08}>
+   930→              <div className="h-full rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:border-primary/40 hover:shadow-glow">
+   931→                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
+   932→                  <item.icon size={22} />
+   933→                </div>
+   934→                <h3 className="mt-4 text-base font-bold">{item.title}</h3>
+   935→                <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+   936→              </div>
+   937→            </Reveal>
+   938→          ))}
+   939→        </div>
+   940→      </Section>
+   941→
+   942→      {/* Openings */}
+   943→      <Section className="bg-secondary/30">
+   944→        <Heading
+   945→          center
+   946→          eyebrow="Open Positions"
+   947→          title={<>Current <span className="text-gradient-brand">openings.</span></>}
+   948→          subtitle="Found the right role? Apply via WhatsApp — we respond within 24 hours."
+   949→        />
+   950→        <div className="mx-auto max-w-3xl space-y-4">
+   951→          {[
+   952→            { title: 'Social Media Manager', type: 'Full-Time', location: 'Hybrid' },
+   953→            { title: 'SEO Specialist', type: 'Full-Time', location: 'Hybrid' },
+   954→            { title: 'Performance Marketer (Meta & Google Ads)', type: 'Full-Time', location: 'Hybrid' },
+   955→            { title: 'Graphic Designer', type: 'Full-Time', location: 'Hybrid' },
+   956→            { title: 'Content Writer & Strategist', type: 'Full-Time', location: 'Remote' },
+   957→            { title: 'Web Developer (WordPress / React)', type: 'Full-Time', location: 'Hybrid' },
+   958→          ].map((job, i) => (
+   959→            <Reveal key={job.title} delay={i * 0.05}>
+   960→              <div className="flex flex-col gap-4 rounded-2xl border border-border bg-card p-5 shadow-soft transition hover:border-primary/40 sm:flex-row sm:items-center sm:justify-between">
+   961→                <div>
+   962→                  <h3 className="font-bold">{job.title}</h3>
+   963→                  <div className="mt-1 flex items-center gap-3 text-xs text-muted-foreground">
+   964→                    <span>{job.type}</span>
+   965→                    <span>·</span>
+   966→                    <span>{job.location}</span>
+   967→                  </div>
+   968→                </div>
+   969→                <a
+   970→                  href={waLink(`Hi Optivo, I'm interested in the ${job.title} position. Here's my background:`)}
+   971→                  target="_blank"
+   972→                  rel="noreferrer"
+   973→                  className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02]"
+   974→                >
+   975→                  Apply <ArrowRight size={14} />
+   976→                </a>
+   977→              </div>
+   978→            </Reveal>
+   979→          ))}
+   980→        </div>
+   981→      </Section>
+   982→    </div>
+   983→  );
+   984→}
+   985→
+   986→/* ═══════════════════════════════════════════════════════════════
+   987→   SUCCESS PAGE
+   988→   ═══════════════════════════════════════════════════════════════ */
+   989→function SuccessPage() {
+   990→  return (
+   991→    <div>
+   992→      {/* Hero */}
+   993→      <section className="relative overflow-hidden bg-gradient-hero pt-32 pb-20 md:pt-40 md:pb-28">
+   994→        <div className="absolute inset-0 grid-bg opacity-10" />
+   995→        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+   996→        <div className="absolute -right-32 -bottom-32 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
+   997→        <div className="relative mx-auto max-w-7xl px-4 md:px-8 text-center">
+   998→          <Eyebrow>Success Stories</Eyebrow>
+   999→          <motion.h1
+  1000→            initial={{ opacity: 0, y: 24 }}
+  1001→            animate={{ opacity: 1, y: 0 }}
+  1002→            transition={{ duration: 0.7 }}
+  1003→            className="mt-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+  1004→          >
+  1005→            Real brands. Real <span className="text-gradient-brand">growth stories.</span>
+  1006→          </motion.h1>
+  1007→          <motion.p
+  1008→            initial={{ opacity: 0, y: 16 }}
+  1009→            animate={{ opacity: 1, y: 0 }}
+  1010→            transition={{ duration: 0.7, delay: 0.15 }}
+  1011→            className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground"
+  1012→          >
+  1013→            Results speak louder than promises. Here's what we've delivered.
+  1014→          </motion.p>
+  1015→        </div>
+  1016→      </section>
+  1017→
+  1018→      {/* Stats */}
+  1019→      <StatsBar />
+  1020→
+  1021→      {/* Case Studies */}
+  1022→      <Section>
+  1023→        <Heading
+  1024→          center
+  1025→          eyebrow="Case Studies"
+  1026→          title={<>Growth stories from <span className="text-gradient-brand">real clients.</span></>}
+  1027→        />
+  1028→        <div className="grid gap-6 sm:grid-cols-2">
+  1029→          {[
+  1030→            {
+  1031→              title: 'DTC Skincare Brand',
+  1032→              metric: '+312%',
+  1033→              metricLabel: 'Organic Traffic Growth',
+  1034→              desc: 'Took a new DTC skincare brand from zero organic visibility to page-one rankings for 40+ high-intent keywords in 8 months.',
+  1035→              tags: ['SEO', 'Content Strategy', 'Branding'],
+  1036→            },
+  1037→            {
+  1038→              title: 'EdTech Platform',
+  1039→              metric: '-42%',
+  1040→              metricLabel: 'Reduction in CAC',
+  1041→              desc: 'Optimized Meta and Google Ads funnels, improving lead quality while cutting cost-per-acquisition by 42% in just 90 days.',
+  1042→              tags: ['Meta Ads', 'Google Ads', 'Landing Pages'],
+  1043→            },
+  1044→            {
+  1045→              title: 'Local Real Estate Company',
+  1046→              metric: '4.7x',
+  1047→              metricLabel: 'Return on Ad Spend',
+  1048→              desc: 'Built a full-funnel ad system for a real estate firm — generating qualified buyer leads at a consistent 4.7x ROAS.',
+  1049→              tags: ['Performance Ads', 'Lead Gen', 'WhatsApp Automation'],
+  1050→            },
+  1051→            {
+  1052→              title: 'Fashion D2C Brand',
+  1053→              metric: '+184%',
+  1054→              metricLabel: 'Revenue Growth',
+  1055→              desc: 'End-to-end e-commerce marketing — from Shopify optimization to Meta ads to email flows — driving 184% revenue growth in 6 months.',
+  1056→              tags: ['E-Commerce', 'Shopify', 'Email Marketing'],
+  1057→            },
+  1058→          ].map((cs, i) => (
+  1059→            <Reveal key={cs.title} delay={i * 0.08}>
+  1060→              <div className="h-full rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:border-primary/40 hover:shadow-glow">
+  1061→                <p className="text-3xl font-bold text-gradient-brand md:text-4xl">{cs.metric}</p>
+  1062→                <p className="mt-1 text-sm font-medium text-muted-foreground">{cs.metricLabel}</p>
+  1063→                <h3 className="mt-4 text-lg font-bold">{cs.title}</h3>
+  1064→                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{cs.desc}</p>
+  1065→                <div className="mt-4 flex flex-wrap gap-1.5">
+  1066→                  {cs.tags.map((tag) => (
+  1067→                    <span key={tag} className="rounded-full bg-secondary px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground">
+  1068→                      {tag}
+  1069→                    </span>
+  1070→                  ))}
+  1071→                </div>
+  1072→              </div>
+  1073→            </Reveal>
+  1074→          ))}
+  1075→        </div>
+  1076→      </Section>
+  1077→
+  1078→      {/* Testimonials */}
+  1079→      <Section className="bg-secondary/30">
+  1080→        <Heading
+  1081→          center
+  1082→          eyebrow="Testimonials"
+  1083→          title={<>What our <span className="text-gradient-brand">clients say.</span></>}
+  1084→        />
+  1085→        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  1086→          {reviews.map((r, i) => (
+  1087→            <Reveal key={r.name} delay={i * 0.06}>
+  1088→              <div className="h-full rounded-2xl border border-border bg-card p-6 shadow-soft">
+  1089→                <div className="flex gap-0.5">
+  1090→                  {Array.from({ length: r.rating }).map((_, j) => (
+  1091→                    <Star key={j} size={16} className="fill-yellow-400 text-yellow-400" />
+  1092→                  ))}
+  1093→                </div>
+  1094→                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">&ldquo;{r.text}&rdquo;</p>
+  1095→                <div className="mt-4 border-t border-border pt-4">
+  1096→                  <p className="text-sm font-bold">{r.name}</p>
+  1097→                  <p className="text-xs text-muted-foreground">{r.role}</p>
+  1098→                </div>
+  1099→              </div>
+  1100→            </Reveal>
+  1101→          ))}
+  1102→        </div>
+  1103→      </Section>
+  1104→
+  1105→      <CTASection />
+  1106→    </div>
+  1107→  );
+  1108→}
+  1109→
+  1110→/* ═══════════════════════════════════════════════════════════════
+  1111→   FAQs PAGE
+  1112→   ═══════════════════════════════════════════════════════════════ */
+  1113→function FAQsPage() {
+  1114→  return (
+  1115→    <div>
+  1116→      <Section className="pt-32 md:pt-40">
+  1117→        <div className="mb-12 text-center">
+  1118→          <Eyebrow>FAQs</Eyebrow>
+  1119→          <motion.h2
+  1120→            initial={{ opacity: 0, y: 24 }}
+  1121→            animate={{ opacity: 1, y: 0 }}
+  1122→            transition={{ duration: 0.6 }}
+  1123→            className="mt-4 text-3xl font-bold tracking-tight md:text-5xl"
+  1124→          >
+  1125→            Everything you wanted to <span className="text-gradient-brand">ask.</span>
+  1126→          </motion.h2>
+  1127→          <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+  1128→            Can't find your answer? Reach out — we're happy to help.
+  1129→          </p>
+  1130→        </div>
+  1131→        <FAQ items={allFaqs} />
+  1132→      </Section>
+  1133→      <CTASection />
+  1134→    </div>
+  1135→  );
+  1136→}
+  1137→
+  1138→/* ═══════════════════════════════════════════════════════════════
+  1139→   MAIN PAGE COMPONENT
+  1140→   ═══════════════════════════════════════════════════════════════ */
+  1141→export default function Page() {
+  1142→  const [currentPage, setCurrentPage] = useState<PageKey>('home');
+  1143→
+  1144→  const handleNavigate = (page: PageKey) => {
+  1145→    setCurrentPage(page);
+  1146→    window.scrollTo({ top: 0, behavior: 'smooth' });
+  1147→  };
+  1148→
+  1149→  const pageMap: Record<PageKey, React.ReactNode> = {
+  1150→    home: <HomePage />,
+  1151→    about: <AboutPage />,
+  1152→    services: <ServicesPage />,
+  1153→    contact: <ContactPage />,
+  1154→    blog: <BlogPage />,
+  1155→    career: <CareerPage />,
+  1156→    success: <SuccessPage />,
+  1157→    faqs: <FAQsPage />,
+  1158→  };
+  1159→
+  1160→  return (
+  1161→    <div className="min-h-screen bg-background text-foreground">
+  1162→      <Navbar currentPage={currentPage} onNavigate={handleNavigate} />
+  1163→
+  1164→      <main className="pt-16">
+  1165→        <PageTransition key_val={currentPage}>
+  1166→          {pageMap[currentPage]}
+  1167→        </PageTransition>
+  1168→      </main>
+  1169→
+  1170→      <Footer onNavigate={handleNavigate} />
+  1171→      <WhatsAppFloat />
+  1172→      <EngagementPopup />
+  1173→    </div>
+  1174→  );
+  1175→}

@@ -1,8 +1,15 @@
-'use client';
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
-export function Section({ children, className = "", id }: { children: ReactNode; className?: string; id?: string }) {
+export function Section({
+  children,
+  className = "",
+  id,
+}: {
+  children: ReactNode;
+  className?: string;
+  id?: string;
+}) {
   return (
     <section id={id} className={`mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28 ${className}`}>
       {children}
@@ -18,7 +25,17 @@ export function Eyebrow({ children }: { children: ReactNode }) {
   );
 }
 
-export function Heading({ eyebrow, title, subtitle, center }: { eyebrow?: string; title: ReactNode; subtitle?: ReactNode; center?: boolean }) {
+export function Heading({
+  eyebrow,
+  title,
+  subtitle,
+  center,
+}: {
+  eyebrow?: string;
+  title: ReactNode;
+  subtitle?: ReactNode;
+  center?: boolean;
+}) {
   return (
     <div className={`mb-12 max-w-3xl ${center ? "mx-auto text-center" : ""}`}>
       {eyebrow && <div className="mb-4"><Eyebrow>{eyebrow}</Eyebrow></div>}
@@ -31,12 +48,22 @@ export function Heading({ eyebrow, title, subtitle, center }: { eyebrow?: string
       >
         {title}
       </motion.h2>
-      {subtitle && <p className="mt-4 text-base text-muted-foreground md:text-lg">{subtitle}</p>}
+      {subtitle && (
+        <p className="mt-4 text-base text-muted-foreground md:text-lg">{subtitle}</p>
+      )}
     </div>
   );
 }
 
-export function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
+export function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}

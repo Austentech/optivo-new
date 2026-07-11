@@ -29,7 +29,10 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Inter", system-ui, sans-serif;
+  --color-navy: var(--navy);
+  --color-electric: var(--electric);
+  --color-cyan: var(--cyan);
+  --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
@@ -58,6 +61,26 @@
   --border: oklch(0.92 0.015 250);
   --input: oklch(0.92 0.015 250);
   --ring: oklch(0.52 0.24 262);
+}
+
+.dark {
+  --background: oklch(0.16 0.04 264);
+  --foreground: oklch(0.98 0.003 250);
+  --card: oklch(0.22 0.06 264);
+  --card-foreground: oklch(0.98 0.003 250);
+  --popover: oklch(0.22 0.06 264);
+  --popover-foreground: oklch(0.98 0.003 250);
+  --primary: oklch(0.65 0.22 250);
+  --primary-foreground: oklch(0.12 0.04 264);
+  --secondary: oklch(0.28 0.06 264);
+  --secondary-foreground: oklch(0.98 0.003 250);
+  --muted: oklch(0.28 0.06 264);
+  --muted-foreground: oklch(0.72 0.03 250);
+  --accent: oklch(0.78 0.16 224);
+  --accent-foreground: oklch(0.16 0.04 264);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.65 0.22 250);
 }
 
 @layer base {
@@ -124,7 +147,10 @@
   .animate-pulse-ring { animation: pulse-ring 2s infinite; }
   @keyframes optivo-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .animate-marquee { animation: optivo-marquee 32s linear infinite; }
-  @media (prefers-reduced-motion: reduce) { .animate-marquee, .animate-float, .animate-pulse-ring { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .animate-marquee { animation: none; } }
   .optivo-input { width: 100%; border-radius: 0.75rem; border: 1px solid var(--color-border); background: var(--color-background); padding: 0.65rem 0.85rem; font-size: 0.9rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
   .optivo-input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-primary) 18%, transparent); }
 }
+
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: local("Inter"); }
+@font-face { font-family: "Space Grotesk"; font-style: normal; font-weight: 300 700; font-display: swap; src: local("Space Grotesk"); }

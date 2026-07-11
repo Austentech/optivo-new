@@ -1,4 +1,3 @@
-'use client';
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
 import { callLink, waLink } from "@/data/site";
 import { Reveal } from "./Section";
@@ -13,15 +12,33 @@ export function CTASection({ title, subtitle }: { title?: string; subtitle?: str
           <div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-accent/30 blur-3xl" />
           <div className="relative mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold md:text-5xl">{title ?? "Let's grow your business — together."}</h2>
-            <p className="mt-4 text-white/85 md:text-lg">{subtitle ?? "Get a free 30-minute strategy call with our team. No fluff. Just a clear growth plan."}</p>
+            <p className="mt-4 text-white/85 md:text-lg">
+              {subtitle ?? "Get a free 30-minute strategy call with our team. No fluff. Just a clear growth plan."}
+            </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href={waLink()} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-foreground shadow-lg transition hover:scale-[1.02]">
+              <a
+                href={waLink()}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-foreground shadow-lg transition hover:scale-[1.02]"
+              >
                 <MessageCircle size={16} /> WhatsApp Us
               </a>
-              <a href={callLink()} className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20">
+              <a
+                href={callLink()}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+              >
                 <Phone size={16} /> Call Now
               </a>
-              <button onClick={() => { const el = document.getElementById('contact-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20">
+              <button
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  // trigger navigate to contact
+                  const event = new CustomEvent("optivo-navigate", { detail: { page: "contact" } });
+                  window.dispatchEvent(event);
+                }}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+              >
                 Free Consultation <ArrowRight size={16} />
               </button>
             </div>
