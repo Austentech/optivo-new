@@ -6,6 +6,7 @@ import Navbar from '@/components/optivo/Navbar';
 import Footer from '@/components/optivo/Footer';
 import WhatsAppFloat from '@/components/optivo/WhatsAppFloat';
 import type { PageKey, NavigateState } from '@/components/optivo/Navbar';
+import { getService } from '@/data/services';
 
 import HomePage from '@/components/optivo/pages/HomePage';
 import AboutPage from '@/components/optivo/pages/AboutPage';
@@ -16,6 +17,18 @@ import CareerPage from '@/components/optivo/pages/CareerPage';
 import BlogPage from '@/components/optivo/pages/BlogPage';
 import SuccessPage from '@/components/optivo/pages/SuccessPage';
 import FAQsPage from '@/components/optivo/pages/FAQsPage';
+
+const PAGE_TITLES: Record<PageKey, string> = {
+  home: 'Optivo Solutions — Performance-Driven Digital Marketing Agency',
+  about: 'About Us — Optivo Solutions | Digital Marketing Agency',
+  services: 'Our Services — Optivo Solutions | Digital Marketing Agency',
+  'service-detail': '',
+  success: 'Success Stories — Optivo Solutions | Digital Marketing Agency',
+  blog: 'Blog — Optivo Solutions | Digital Marketing Agency',
+  contact: 'Contact Us — Optivo Solutions | Digital Marketing Agency',
+  career: 'Career — Optivo Solutions | Join Our Team',
+  faqs: 'FAQs — Optivo Solutions | Digital Marketing Agency',
+};
 
 export default function OptivoApp() {
   const [pageState, setPageState] = useState<NavigateState>({ page: 'home' });
@@ -35,6 +48,19 @@ export default function OptivoApp() {
     window.addEventListener('optivo-navigate', handler);
     return () => window.removeEventListener('optivo-navigate', handler);
   }, [handleNavigate]);
+
+  // Update page title on navigation
+  useEffect(() => {
+    const page = pageState.page;
+    let title = PAGE_TITLES[page] || 'Optivo Solutions';
+    if (page === 'service-detail' && pageState.serviceSlug) {
+      const svc = getService(pageState.serviceSlug);
+      title = svc
+        ? `${svc.title} — Optivo Solutions | Digital Marketing Agency`
+        : 'Service — Optivo Solutions';
+    }
+    document.title = title;
+  }, [pageState]);
 
   const currentPage = pageState.page;
 

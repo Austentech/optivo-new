@@ -21,7 +21,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-3 rounded-2xl bg-background p-3">
-              <img src="/optivo-logo.jpeg" alt="Optivo Solutions" className="h-10 w-auto" />
+              <img src="/optivo-logo-header.png" alt="Optivo Solutions" className="h-8 w-auto" />
             </div>
             <p className="text-sm text-background/70">
               A growth-obsessed digital agency helping ambitious brands scale online with strategy, creativity and measurable results.

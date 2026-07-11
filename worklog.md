@@ -129,3 +129,35 @@ Stage Summary:
 - Google Fonts (Inter + Space Grotesk) loaded via preconnect
 - LocalBusiness structured data for SEO
 - Production build verified working with agent-browser
+
+---
+Task ID: logo-favicon-titles-fix
+Agent: Main Agent
+Task: Fix sandbox error, update logo (small size, transparent background), add favicon, add page titles
+
+Work Log:
+- Restarted dev server to fix "sandbox is inactive" error
+- Analyzed uploaded logo (IMG_7019.PNG) - found it's already a transparent PNG (87% transparent pixels)
+- Used AI image-edit to create transparent version (but API returned JPEG, not suitable)
+- Discovered original upload already has proper alpha channel transparency
+- Used sharp to generate properly sized assets from original transparent PNG:
+  - optivo-logo-header.png: 160x90, transparent PNG for navbar
+  - favicon.ico: 32x32, transparent PNG
+  - apple-touch-icon.png: 180x180, transparent PNG
+- Updated Navbar.tsx: logo src → optivo-logo-header.png, size h-9 md:h-11 (small & clean)
+- Updated Footer.tsx: logo src → optivo-logo-header.png, size h-8
+- Updated page.tsx: Added PAGE_TITLES map and useEffect to set document.title on navigation
+  - Home: "Optivo Solutions — Performance-Driven Digital Marketing Agency"
+  - About: "About Us — Optivo Solutions | Digital Marketing Agency"
+  - Services: "Our Services — Optivo Solutions | Digital Marketing Agency"
+  - Service Detail: "{Service Title} — Optivo Solutions | Digital Marketing Agency"
+  - Contact, Career, Blog, FAQs, Success all have unique titles
+- Verified via curl: title renders correctly, favicon serves HTTP 200, logo serves HTTP 200
+- Verified logo file via VLM: shows "optivo SOLUTIONS" with transparent background
+
+Stage Summary:
+- Logo is now small (h-9 on mobile, h-11 on desktop) with transparent background
+- Favicon is the Optivo logo (32x32 transparent PNG)
+- Apple touch icon is 180x180
+- Each page has a unique, descriptive title that updates on navigation
+- All code changes are clean with no lint errors from our modifications
