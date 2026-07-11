@@ -1,19 +1,10 @@
-'use client';
-import { Mail, MapPin, Phone, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Mail, MapPin, Phone, Instagram, Facebook, Linkedin, Youtube, MessageCircle } from "lucide-react";
+import logo from "@/assets/optivo-logo.png";
 import { SITE, waLink, callLink } from "@/data/site";
 import { services } from "@/data/services";
-import type { PageKey } from "./Navbar";
 
-interface FooterProps {
-  onNavigate: (state: { page: PageKey; serviceSlug?: string }) => void;
-}
-
-export default function Footer({ onNavigate }: FooterProps) {
-  const nav = (page: PageKey) => {
-    onNavigate({ page });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+export default function Footer() {
   return (
     <footer className="relative mt-24 border-t border-border bg-foreground text-background">
       <div className="absolute inset-0 grid-bg opacity-20" />
@@ -21,7 +12,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-3 rounded-2xl bg-background p-3">
-              <img src="/optivo-logo.jpeg" alt="Optivo Solutions" className="h-10 w-auto" />
+              <img src={logo} alt="Optivo Solutions" className="h-10 w-auto" />
             </div>
             <p className="text-sm text-background/70">
               A growth-obsessed digital agency helping ambitious brands scale online with strategy, creativity and measurable results.
@@ -30,6 +21,9 @@ export default function Footer({ onNavigate }: FooterProps) {
               {[
                 { Icon: Instagram, href: "https://www.instagram.com/optivosolutions", label: "Instagram" },
                 { Icon: Facebook, href: "https://www.facebook.com/optivosolutions", label: "Facebook" },
+                // YouTube & LinkedIn hidden for now — uncomment to re-enable
+                // { Icon: Linkedin, href: "#", label: "LinkedIn" },
+                // { Icon: Youtube, href: "#", label: "YouTube" },
               ].map(({ Icon, href, label }) => (
                 <a
                   key={label}
@@ -49,15 +43,24 @@ export default function Footer({ onNavigate }: FooterProps) {
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background/90">Company</h4>
             <ul className="space-y-2 text-sm text-background/70">
               {[
-                { key: "about" as PageKey, label: "About" },
-                { key: "services" as PageKey, label: "Services" },
-                { key: "success" as PageKey, label: "Success Stories" },
-                { key: "career" as PageKey, label: "Career" },
-                { key: "blog" as PageKey, label: "Blog" },
-                { key: "faqs" as PageKey, label: "FAQs" },
-              ].map(({ key, label }) => (
-                <li key={key}>
-                  <button onClick={() => nav(key)} className="transition hover:text-white">{label}</button>
+                ["/about", "About"],
+                ["/services", "Services"],
+                ["/success", "Success Stories"],
+                ["/career", "Career"],
+                ["/blog", "Blog"],
+                ["/faqs", "FAQs"],
+                ["/admin/login", "Admin Login"],
+              ].map(([to, label]) => (
+                <li key={to}>
+                  {to === "/admin/login" ? (
+                    <a href="/admin/login" className="transition hover:text-white">
+                      {label}
+                    </a>
+                  ) : (
+                    <Link to={to} className="transition hover:text-white">
+                      {label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -68,9 +71,9 @@ export default function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-2 text-sm text-background/70">
               {services.slice(0, 8).map((s) => (
                 <li key={s.slug}>
-                  <button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); onNavigate({ page: "service-detail", serviceSlug: s.slug }); }} className="transition hover:text-white">
+                  <Link to="/services/$slug" params={{ slug: s.slug }} className="transition hover:text-white">
                     {s.title}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -79,9 +82,16 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background/90">Legal</h4>
             <ul className="space-y-2 text-sm text-background/70">
-              {["Privacy Policy", "Terms & Conditions", "Disclaimer & Cookie Policy", "Payments & Refund Policy"].map((label) => (
-                <li key={label}>
-                  <span className="cursor-pointer transition hover:text-white">{label}</span>
+              {[
+                ["/privacy-policy", "Privacy Policy"],
+                ["/terms-conditions", "Terms & Conditions"],
+                ["/disclaimer-cookie-policy", "Disclaimer & Cookie Policy"],
+                ["/payments-refund-policy", "Payments & Refund Policy"],
+              ].map(([to, label]) => (
+                <li key={to}>
+                  <Link to={to} className="transition hover:text-white">
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -108,8 +118,8 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="mt-12 flex flex-col gap-4 border-t border-background/15 pt-6 text-xs text-background/60 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-4">
             <span>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</span>
-            <span className="cursor-pointer transition hover:text-white">Terms & Conditions</span>
-            <span className="cursor-pointer transition hover:text-white">Privacy Policy</span>
+            <Link to="/terms-conditions" className="hover:text-white">Terms & Conditions</Link>
+            <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
           </div>
           <span>💡 Crafted with code and curiosity by <span className="font-semibold text-white">Sankhya Stack</span></span>
         </div>

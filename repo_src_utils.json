@@ -1,0 +1,21 @@
+{
+  "code": 200,
+  "data": {
+    "description": "",
+    "html": "<html><head><meta name=\"color-scheme\" content=\"light dark\"></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">[\n  {\n    \"name\": \"errorHandler.ts\",\n    \"path\": \"src/utils/errorHandler.ts\",\n    \"sha\": \"f99f1207ca8afb580d22c1e8ba4ac78cf7ce4244\",\n    \"size\": 1754,\n    \"url\": \"https://api.github.com/repos/Austentech/optivo-solutions-main/contents/src/utils/errorHandler.ts?ref=main\",\n    \"html_url\": \"https://github.com/Austentech/optivo-solutions-main/blob/main/src/utils/errorHandler.ts\",\n    \"git_url\": \"https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/f99f1207ca8afb580d22c1e8ba4ac78cf7ce4244\",\n    \"download_url\": \"https://raw.githubusercontent.com/Austentech/optivo-solutions-main/main/src/utils/errorHandler.ts\",\n    \"type\": \"file\",\n    \"_links\": {\n      \"self\": \"https://api.github.com/repos/Austentech/optivo-solutions-main/contents/src/utils/errorHandler.ts?ref=main\",\n      \"git\": \"https://api.github.com/repos/Austentech/optivo-solutions-main/git/blobs/f99f1207ca8afb580d22c1e8ba4ac78cf7ce4244\",\n      \"html\": \"https://github.com/Austentech/optivo-solutions-main/blob/main/src/utils/errorHandler.ts\"\n    }\n  }\n]\n</pre></body></html>",
+    "httpStatus": 200,
+    "httpStatusText": "",
+    "publishedTime": "Fri, 10 Jul 2026 06:11:48 GMT",
+    "title": "",
+    "url": "https://api.github.com/repos/Austentech/optivo-solutions-main/contents/src/utils",
+    "usage": {
+      "tokens": 361
+    }
+  },
+  "meta": {
+    "usage": {
+      "tokens": 361
+    }
+  },
+  "status": 20000
+}

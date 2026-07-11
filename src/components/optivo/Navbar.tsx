@@ -52,7 +52,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "glass border-b border-border/60 shadow-soft" : "bg-transparent"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <button onClick={() => handleNav("home")} className="flex items-center gap-2">
-          <img src="/logo.svg" alt="Optivo Solutions" className="h-16 w-auto md:h-20" />
+          <img src="/optivo-logo.jpeg" alt="Optivo Solutions logo" className="h-16 w-auto md:h-20" />
         </button>
 
         <nav className="hidden items-center gap-1 lg:flex">
