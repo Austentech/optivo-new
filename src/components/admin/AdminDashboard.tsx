@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { Users, Mail, Phone, MessageSquare, ArrowRight, Loader2, Lightbulb } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
 
 interface AdminDashboardProps {
   onNavigate: (tab: string) => void;

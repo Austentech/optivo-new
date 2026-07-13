@@ -2,10 +2,10 @@
 import { Mail, MapPin, Phone, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { SITE, waLink, callLink } from "@/data/site";
 import { services } from "@/data/services";
-import type { PageKey } from "./Navbar";
+import type { PageKey, NavigateState } from "./Navbar";
 
 interface FooterProps {
-  onNavigate: (state: { page: PageKey; serviceSlug?: string }) => void;
+  onNavigate: (state: NavigateState) => void;
 }
 
 export default function Footer({ onNavigate }: FooterProps) {

@@ -197,7 +197,7 @@ export async function GET(request: Request) {
 
     if (format === 'pdf') {
       const pdfBuffer = buildSimplePdf(leads as unknown as Record<string, string | boolean | Date>[])
-      return new NextResponse(pdfBuffer, {
+      return new NextResponse(new Uint8Array(pdfBuffer), {
         headers: {
           'Content-Type': 'application/pdf',
           'Content-Disposition': 'attachment; filename="leads.pdf"',

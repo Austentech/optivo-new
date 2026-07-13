@@ -6,7 +6,7 @@ import { callLink, waLink, SITE } from "@/data/site";
 
 export type PageKey = "home" | "about" | "services" | "success" | "blog" | "contact" | "career" | "faqs" | "service-detail";
 
-interface NavigateState {
+export interface NavigateState {
   page: PageKey;
   serviceSlug?: string;
   admin?: boolean;
