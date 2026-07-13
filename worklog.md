@@ -161,3 +161,32 @@ Stage Summary:
 - Apple touch icon is 180x180
 - Each page has a unique, descriptive title that updates on navigation
 - All code changes are clean with no lint errors from our modifications
+
+---
+Task ID: admin-dashboard-crm
+Agent: Main Agent
+Task: Build complete admin CRM dashboard with login, leads management, export, and DB integration
+
+Work Log:
+- Analyzed 6 uploaded screenshots (login, dashboard, new leads, callback leads, enquiry leads, change password)
+- Updated Prisma schema: Admin (username, passwordHash, salt), Session (token, adminId, expiresAt), Lead (name, phone, email, service, type, preferredDate, preferredTime, message, isRead)
+- Pushed schema to SQLite, seeded default admin (info@optivo.in / Optivo123@#)
+- Created auth utility: scryptSync password hashing (64-byte key, 32-byte salt), timingSafeEqual verification, session token generation
+- Built 9 API routes: login, logout, me, change-password, leads (GET+POST), leads/[id] (PATCH+DELETE), stats, export
+- Built 5 admin UI components: AdminLogin, AdminLayout, AdminDashboard, AdminLeadsTable, AdminChangePassword
+- Integrated admin routing into SPA (page.tsx) with auth guard
+- Added "Admin" link to footer
+- Connected BookCall form → saves callback leads to DB
+- Connected ContactPage form → saves enquiry leads to DB
+- Fixed stats API bug (was passing fake Request instead of real one)
+- Full end-to-end API testing: login, wrong password rejection, stats, leads, CSV export, auth guard all verified
+
+Stage Summary:
+- Login: info@optivo.in / Optivo123@# (scrypt hashed, timing-safe compare)
+- Session: httpOnly cookie, 7-day expiry, DB-backed
+- Dashboard: 4 stat cards, recent leads list, 3 progress bars, tip box
+- Leads tables: search, type/status filters, CSV/PDF export, mark as read, delete, pagination
+- Change password: validates current, enforces 8+ chars + upper/lower/number
+- Export: CSV (proper escaping) and PDF (minimal Courier-based)
+- SQLite via Prisma ORM (no raw SQL = SQL injection prevention)
+- All API routes verified working via curl tests

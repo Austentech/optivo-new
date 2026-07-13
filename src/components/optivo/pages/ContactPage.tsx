@@ -19,6 +19,22 @@ function ContactForm() {
     setSaving(true);
     const msg = `New Contact Enquiry\n\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\n\n${form.message}`;
     window.open(waLink(msg), "_blank");
+    // Also save lead to DB
+    try {
+      await fetch('/api/admin/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          type: 'enquiry',
+          message: form.message,
+        }),
+      });
+    } catch {
+      // Silent — WhatsApp is the primary flow
+    }
     setSaving(false);
     setSent(true);
   };

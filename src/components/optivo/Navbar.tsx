@@ -9,6 +9,8 @@ export type PageKey = "home" | "about" | "services" | "success" | "blog" | "cont
 interface NavigateState {
   page: PageKey;
   serviceSlug?: string;
+  admin?: boolean;
+  adminTab?: string;
 }
 
 const nav: { key: PageKey; label: string }[] = [

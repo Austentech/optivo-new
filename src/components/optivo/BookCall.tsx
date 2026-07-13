@@ -35,6 +35,23 @@ export function BookCall() {
       `Time: ${data.time}`,
     ].join("\n");
     window.open(waLink(msg), "_blank");
+    // Also save lead to DB
+    try {
+      await fetch('/api/admin/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.name,
+          phone: data.phone,
+          service: data.service,
+          type: 'callback',
+          preferredDate: data.date,
+          preferredTime: data.time,
+        }),
+      });
+    } catch {
+      // Silent — WhatsApp is the primary flow
+    }
     setSaving(false);
     setStep("done");
   };

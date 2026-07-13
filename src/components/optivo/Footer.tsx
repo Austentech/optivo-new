@@ -60,6 +60,9 @@ export default function Footer({ onNavigate }: FooterProps) {
                   <button onClick={() => nav(key)} className="transition hover:text-white">{label}</button>
                 </li>
               ))}
+              <li>
+                <button onClick={() => onNavigate({ page: 'home', admin: true, adminTab: 'admin-login' })} className="transition hover:text-white">Admin</button>
+              </li>
             </ul>
           </div>
 
