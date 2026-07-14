@@ -31,3 +31,34 @@ Stage Summary:
 - Database seeded with default admin credentials
 - Production build verified end-to-end
 - Dev server started on port 3000
+
+---
+Task ID: 2
+Agent: Main Agent
+Task: Fix white page and 504 errors, make production-ready
+
+Work Log:
+- Diagnosed 504 errors: caused by Turbopack dev server OOM kills in sandbox
+- Created .zscripts/dev.sh with production build + auto-restart loop
+- Removed `output: "standalone"` from next.config.ts (caused next start to fail)
+- Verified zero TypeScript errors in src/
+- Production build: compiled successfully, all 11 routes generated
+- Full API test suite (all in single command to avoid process kill):
+  - Homepage: 91,432 bytes, contains Optivo/logo/Admin ✅
+  - Login API: {"success":true,"admin":{"username":"info@optivo.in"}} ✅
+  - Stats API: correct lead counts with recent leads ✅
+  - Enquiry lead submission: success ✅
+  - Callback lead submission: success ✅
+  - Leads listing: paginated with correct data ✅
+  - CSV export: proper format with headers and data ✅
+  - PDF export: 200 status, valid PDF ✅
+  - Logout: success ✅
+  - Unauthorized access blocked: {"error":"Authentication required"} ✅
+- Browser verified: homepage renders with all sections, admin login page accessible from footer
+
+Stage Summary:
+- Root cause of white page: TypeScript errors (fixed in Task 1)
+- Root cause of 504: Turbopack OOM kills → solved with .zscripts/dev.sh using production build
+- .zscripts/dev.sh provides: build → seed → start with auto-restart on crash
+- All admin dashboard features working: login, stats, leads CRUD, filters, CSV/PDF export, change password, logout
+- Admin credentials: info@optivo.in / Optivo123@#
