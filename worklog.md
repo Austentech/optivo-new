@@ -84,3 +84,35 @@ Stage Summary:
 - The "sandbox is inactive" error was a server-not-running issue, not a code bug
 - Dev server restarted and verified working end-to-end via browser
 - Application is fully functional with all pages and admin dashboard
+
+---
+Task ID: 4
+Agent: Main Agent
+Task: Migrate to Turso (libsql) for Vercel deployment
+
+Work Log:
+- Installed @libsql/client@0.17.4 and @prisma/adapter-libsql@7.8.0
+- Updated prisma/schema.prisma: kept provider=sqlite (Turso is SQLite-compatible)
+- Rewrote src/lib/db.ts to use PrismaLibSql adapter factory pattern
+  - Key fix: PrismaLibSql takes a config object (not a Client instance) — it creates the libsql client internally
+  - Supports both file: URLs (local dev) and libsql: URLs (Turso cloud) seamlessly
+  - Removed unused @libsql/client import (adapter handles it internally)
+- Updated prisma/seed.ts: added dotenv config() with dynamic import to ensure env vars load before db module
+- Installed dotenv@17.4.2 for seed script env loading
+- Updated .env: local SQLite for dev, commented Turso config for production
+- Created .env.example: template for Vercel deployment
+- Regenerated Prisma client, pushed schema, seeded admin user — all successful
+- Full API test suite (all passing):
+  - Homepage: HTTP 200, 105,603 bytes ✅
+  - Login API: {"success":true,"admin":{"username":"info@optivo.in"}} ✅
+  - Stats API: correct lead counts ✅
+  - Lead submission: {"success":true,"id":"..."} ✅
+  - CSV export: HTTP 200, 376 bytes ✅
+- Browser verification: homepage renders, navigation works, admin login accessible, zero JS errors
+- Lint: zero errors in src/ (only unused original_src/ files have lint issues)
+
+Stage Summary:
+- Database layer fully migrated to libsql adapter — works locally with SQLite file
+- For Vercel: just change DATABASE_URL to libsql:// and add TURSO_AUTH_TOKEN in Vercel env vars
+- No code changes needed for deployment — the adapter handles both local and cloud transparently
+- Admin credentials: info@optivo.in / Optivo123@#
