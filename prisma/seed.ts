@@ -1,9 +1,5 @@
-import { config } from 'dotenv';
-config();
-
-// Dynamic import AFTER dotenv loads, since ES imports are hoisted
-const { db } = await import('../src/lib/db');
-const { randomBytes, scryptSync } = await import('crypto');
+import { db } from '../src/lib/db';
+import { randomBytes, scryptSync } from 'crypto';
 
 async function seed() {
   const username = 'info@optivo.in';
