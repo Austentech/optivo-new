@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from '@/components/optivo/Navbar';
 import Footer from '@/components/optivo/Footer';
 import WhatsAppFloat from '@/components/optivo/WhatsAppFloat';
+import EngagementPopup from '@/components/optivo/EngagementPopup';
 import type { PageKey, NavigateState } from '@/components/optivo/Navbar';
 import { getService } from '@/data/services';
 
@@ -253,6 +254,7 @@ export default function OptivoApp() {
       </main>
       <Footer onNavigate={handleNavigate} />
       <WhatsAppFloat />
+      <EngagementPopup />
     </div>
   );
 }

@@ -32,7 +32,7 @@ export default function EngagementPopup() {
     const t = setTimeout(() => {
       setIdx(Math.floor(Math.random() * messages.length));
       setOpen(true);
-    }, 20_000);
+    }, 12_000);
     return () => clearTimeout(t);
   }, []);
 
